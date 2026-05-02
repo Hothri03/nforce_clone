@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NForce One AI - Contact</title>
+	<title>NForce One AI</title>
     <meta name="description" content="NForce One AI is a premium AI services provider for telecom clients. ">
     <meta name="framer-search-index" content="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/searchIndex-w8kO2vXIFXU6.json">
     <meta name="framer-search-index-fallback" content="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/searchIndex-IJRYM2n9PQjV.json">
@@ -153,8 +153,7 @@
     var path = normalizePath(window.location.pathname);
     var hash = normalizeHash(window.location.hash);
     var search = (window.location.search || '').toLowerCase();
-    var title = (document.title || '').toLowerCase();
-    var routeSignal = (path + ' ' + hash + ' ' + search + ' ' + title).toLowerCase();
+    var routeSignal = (path + ' ' + hash + ' ' + search).toLowerCase();
 
     for (var i = 0; i < nonHomeKeywords.length; i++) {
       if (routeSignal.indexOf(nonHomeKeywords[i]) !== -1) {
@@ -584,6 +583,50 @@
         }
     </style>
 <style>
+        /* Orbit logos: transparent chips with color-matched outlines */
+        [data-framer-name^="Arm"] > div[class*="-container"] {
+            background: transparent !important;
+            border: 2px solid var(--orbit-logo-outline, rgba(255, 255, 255, 0.45)) !important;
+            border-radius: 999px !important;
+            box-shadow: none !important;
+            overflow: hidden !important;
+        }
+
+        [data-framer-name^="Arm"] > div[class*="-container"].orbit-logo-empty {
+            display: none !important;
+        }
+
+        [data-framer-name^="Arm"] > div[class*="-container"]:nth-of-type(n+2) {
+            display: none !important;
+        }
+
+        [data-framer-name^="Arm"] > div[class*="-container"].orbit-logo-filled {
+            display: flex !important;
+        }
+
+        [data-framer-name^="Arm"] > div[class*="-container"],
+        [data-framer-name^="Arm"] > div[class*="-container"] * {
+            background-color: transparent !important;
+        }
+
+        [data-framer-name^="Arm"] img[alt="Logo"] {
+            background: transparent !important;
+            opacity: 1 !important;
+            filter: none !important;
+            transform: rotate(var(--orbit-logo-inverse, 0deg)) translateZ(0) !important;
+            transform-origin: 50% 50% !important;
+        }
+
+        [data-framer-name^="Arm"] img[data-orbit-filled-logo="true"] {
+            width: 64% !important;
+            height: 64% !important;
+            object-fit: contain !important;
+            margin: auto !important;
+            inset: 0 !important;
+        }
+
+    </style>
+<style>
         /* Hide disabled contact CTA links */
         a[href="javascript:void(0)"] {
             display: none !important;
@@ -656,6 +699,258 @@
 
             const observer = new MutationObserver(() => populateAll());
             observer.observe(document.body, { childList: true, subtree: true });
+        })();
+    </script>
+<script>
+        (function makeOrbitLogosOutlineOnly() {
+            const selector = '[data-framer-name^="Arm"] img[alt="Logo"]';
+            const processed = new WeakSet();
+
+            const colorDistance = (a, b) => {
+                const dr = a[0] - b[0];
+                const dg = a[1] - b[1];
+                const db = a[2] - b[2];
+                return Math.sqrt(dr * dr + dg * dg + db * db);
+            };
+
+            const saturation = (r, g, b) => {
+                const max = Math.max(r, g, b);
+                const min = Math.min(r, g, b);
+                return max === 0 ? 0 : (max - min) / max;
+            };
+
+            const rgb = (c, fallback = 'rgba(255,255,255,0.45)') => {
+                if (!c) return fallback;
+                return `rgb(${Math.round(c[0])}, ${Math.round(c[1])}, ${Math.round(c[2])})`;
+            };
+
+            const average = (colors) => {
+                if (!colors.length) return null;
+                const sum = colors.reduce((acc, color) => {
+                    acc[0] += color[0];
+                    acc[1] += color[1];
+                    acc[2] += color[2];
+                    return acc;
+                }, [0, 0, 0]);
+                return sum.map((value) => value / colors.length);
+            };
+
+            const processImage = (img) => {
+                if (processed.has(img) || img.dataset.orbitLogoProcessed === 'true') return;
+                processed.add(img);
+
+                const source = new Image();
+                source.crossOrigin = 'anonymous';
+                source.onload = () => {
+                    try {
+                        const width = source.naturalWidth || source.width;
+                        const height = source.naturalHeight || source.height;
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.drawImage(source, 0, 0, width, height);
+
+                        const image = ctx.getImageData(0, 0, width, height);
+                        const data = image.data;
+                        const cx = width / 2;
+                        const cy = height / 2;
+                        const outer = Math.min(width, height) / 2;
+                        const bgSamples = [];
+                        const colorSamples = [];
+
+                        for (let y = 0; y < height; y += Math.max(1, Math.floor(height / 80))) {
+                            for (let x = 0; x < width; x += Math.max(1, Math.floor(width / 80))) {
+                                const index = (y * width + x) * 4;
+                                if (data[index + 3] < 40) continue;
+                                const dx = x - cx;
+                                const dy = y - cy;
+                                const dist = Math.sqrt(dx * dx + dy * dy);
+                                const color = [data[index], data[index + 1], data[index + 2]];
+
+                                if (dist > outer * 0.58 && dist < outer * 0.98) {
+                                    bgSamples.push(color);
+                                } else if (saturation(color[0], color[1], color[2]) > 0.18) {
+                                    colorSamples.push(color);
+                                }
+                            }
+                        }
+
+                        const bg = average(bgSamples);
+                        const accent = average(colorSamples) || bg;
+                        img.parentElement?.style.setProperty('--orbit-logo-outline', rgb(accent));
+
+                        const totalPixels = data.length / 4;
+                        let transparentPixels = 0;
+                        let logoPixels = 0;
+
+                        if (bg) {
+                            for (let i = 0; i < data.length; i += 4) {
+                                if (data[i + 3] < 20) {
+                                    transparentPixels++;
+                                    continue;
+                                }
+                                const color = [data[i], data[i + 1], data[i + 2]];
+                                const sat = saturation(color[0], color[1], color[2]);
+                                const brightness = (color[0] + color[1] + color[2]) / 3;
+                                const closeToBg = colorDistance(color, bg) < 92;
+                                const whiteDisk = brightness > 186 && sat < 0.2;
+                                const greyDisk = sat < 0.12 && colorDistance(color, bg) < 112;
+
+                                if (closeToBg || whiteDisk || greyDisk) {
+                                    data[i + 3] = 0;
+                                    transparentPixels++;
+                                } else {
+                                    logoPixels++;
+                                    if (brightness < 55) {
+                                        data[i] = 235;
+                                        data[i + 1] = 240;
+                                        data[i + 2] = 255;
+                                    }
+                                }
+                            }
+                        }
+
+                        const logoRatio = logoPixels / totalPixels;
+
+                        if (logoRatio < 0.01) {
+                            img.parentElement?.classList.add('orbit-logo-empty');
+                            img.dataset.orbitLogoProcessed = 'empty';
+                            return;
+                        }
+
+                        ctx.putImageData(image, 0, 0);
+                        img.src = canvas.toDataURL('image/png');
+                        img.dataset.orbitLogoProcessed = 'true';
+                    } catch (error) {
+                        img.parentElement?.style.setProperty('--orbit-logo-outline', 'rgba(255,255,255,0.45)');
+                    }
+                };
+                source.src = img.currentSrc || img.src;
+            };
+
+            const hideEmptyContainers = () => {
+                document.querySelectorAll('[data-framer-name^="Arm"] > div[class*="-container"]').forEach((container) => {
+                    const img = container.querySelector('img[alt="Logo"]');
+                    if (!img || img.dataset.orbitLogoProcessed === 'empty') {
+                        container.classList.add('orbit-logo-empty');
+                    }
+                });
+            };
+
+            const processAll = () => {
+                document.querySelectorAll(selector).forEach(processImage);
+                hideEmptyContainers();
+            };
+            processAll();
+            setTimeout(processAll, 500);
+            setTimeout(processAll, 1500);
+            new MutationObserver(processAll).observe(document.body, { childList: true, subtree: true });
+        })();
+    </script>
+<script>
+        (function fillEmptyOrbitLogosAndSpeedUp() {
+            const logos = [
+                {
+                    name: 'ChatGPT',
+                    outline: '#10a37f',
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><g stroke="#10a37f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14c8 0 15 5 18 12 8 1 14 8 14 17 0 5-2 10-6 13 1 9-5 17-13 20-5 8-16 11-25 6-8 2-17-2-21-10-5-6-5-15 0-22-2-9 3-18 12-22 4-8 12-14 21-14Z"/><path d="M35 29l30 17v27"/><path d="M65 30L35 47 18 39"/><path d="M75 56L45 39 22 52"/><path d="M65 72L35 55 35 28"/><path d="M25 45l30 17 22-12"/><path d="M35 71V36l30-17"/></g></svg>`
+                },
+                {
+                    name: 'Gemini',
+                    outline: '#8ab4f8',
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><g stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10c4 20 20 36 40 40-20 4-36 20-40 40-4-20-20-36-40-40 20-4 36-20 40-40Z" stroke="#8ab4f8"/><path d="M50 24c3 12 14 23 26 26-12 3-23 14-26 26-3-12-14-23-26-26 12-3 23-14 26-26Z" stroke="#c58af9"/></g></svg>`
+                }
+            ];
+
+            const svgUrl = (svg) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+
+            const fillSlot = (container, logo) => {
+                container.classList.remove('orbit-logo-empty');
+                container.classList.add('orbit-logo-filled');
+                container.style.removeProperty('display');
+                container.style.setProperty('--orbit-logo-outline', logo.outline);
+
+                let img = container.querySelector('img[alt="Logo"]');
+                if (!img) {
+                    img = document.createElement('img');
+                    img.alt = 'Logo';
+                    container.appendChild(img);
+                }
+
+                img.dataset.orbitFilledLogo = 'true';
+                img.dataset.orbitLogoProcessed = 'true';
+                img.src = svgUrl(logo.svg);
+            };
+
+            const fillEmptySlots = () => {
+                const containers = Array.from(document.querySelectorAll('[data-framer-name^="Arm"] > div[class*="-container"]'));
+                const emptySlots = containers.filter((container) => {
+                    const img = container.querySelector('img[alt="Logo"]');
+                    return container.classList.contains('orbit-logo-empty') || !img || img.dataset.orbitLogoProcessed === 'empty';
+                });
+
+                emptySlots.slice(0, logos.length).forEach((container, index) => fillSlot(container, logos[index]));
+            };
+
+            const speedUpOrbit = () => {
+                document.getAnimations().forEach((animation) => {
+                    const target = animation.effect && animation.effect.target;
+                    if (target && target.closest && target.closest('[data-framer-name^="Arm"]')) {
+                        animation.playbackRate = 1.8;
+                    }
+                });
+            };
+
+            const update = () => {
+                fillEmptySlots();
+                speedUpOrbit();
+            };
+
+            update();
+            setTimeout(update, 500);
+            setTimeout(update, 1500);
+            setInterval(update, 2500);
+            new MutationObserver(update).observe(document.body, { childList: true, subtree: true });
+        })();
+    </script>
+<script>
+        (function keepOrbitLogosUpright() {
+            const readRotation = (element) => {
+                const transform = element.style.transform || window.getComputedStyle(element).transform || '';
+                const inlineMatch = transform.match(/rotate\((-?\d+(?:\.\d+)?)deg\)/);
+                if (inlineMatch) return Number(inlineMatch[1]);
+                return 0;
+            };
+
+            const update = () => {
+                document.querySelectorAll('[data-framer-name^="Arm"]').forEach((arm) => {
+                    const inverse = -readRotation(arm);
+                    arm.querySelectorAll('img[alt="Logo"]').forEach((img) => {
+                        img.style.setProperty('--orbit-logo-inverse', `${inverse}deg`);
+                    });
+                });
+                requestAnimationFrame(update);
+            };
+
+            update();
+        })();
+    </script>
+<script>
+        (function keepHomeFaqVisible() {
+            const update = () => {
+                const path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+                const hash = (window.location.hash || '').toLowerCase();
+                const isHomePath = path === '/' || path.endsWith('/index.html');
+                const isHomeHash = hash === '' || hash === '#' || hash === '#home' || hash === '#/';
+                const isHome = isHomePath && isHomeHash;
+                document.body.classList.toggle('is-home-view', isHome);
+            };
+            update();
+            window.addEventListener('hashchange', update);
+            window.addEventListener('popstate', update);
+            setTimeout(update, 500);
+            setTimeout(update, 1500);
         })();
     </script>
 
