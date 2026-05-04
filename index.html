@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -851,67 +851,90 @@
 <script>
         (function fillEmptyOrbitLogosAndSpeedUp() {
             const logos = [
-                {
-                    name: 'ChatGPT',
-                    outline: '#10a37f',
-                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><g stroke="#10a37f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14c8 0 15 5 18 12 8 1 14 8 14 17 0 5-2 10-6 13 1 9-5 17-13 20-5 8-16 11-25 6-8 2-17-2-21-10-5-6-5-15 0-22-2-9 3-18 12-22 4-8 12-14 21-14Z"/><path d="M35 29l30 17v27"/><path d="M65 30L35 47 18 39"/><path d="M75 56L45 39 22 52"/><path d="M65 72L35 55 35 28"/><path d="M25 45l30 17 22-12"/><path d="M35 71V36l30-17"/></g></svg>`
-                },
-                {
-                    name: 'Gemini',
-                    outline: '#8ab4f8',
-                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><g stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10c4 20 20 36 40 40-20 4-36 20-40 40-4-20-20-36-40-40 20-4 36-20 40-40Z" stroke="#8ab4f8"/><path d="M50 24c3 12 14 23 26 26-12 3-23 14-26 26-3-12-14-23-26-26 12-3 23-14 26-26Z" stroke="#c58af9"/></g></svg>`
-                }
+                'assets/orbit-logos/Orange logo.png',
+                'assets/orbit-logos/blue-red.jpg',
+                'assets/orbit-logos/boat.png',
+                'assets/orbit-logos/chatgpt.png',
+                'assets/orbit-logos/claude.png',
+                'assets/orbit-logos/copilot.png',
+                'assets/orbit-logos/deepseek_0000.jpg',
+                'assets/orbit-logos/drive.png',
+                'assets/orbit-logos/huggingfacce.png',
+                'assets/orbit-logos/parrot-link.png'
             ];
 
-            const svgUrl = (svg) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+            const fillAllSlots = () => {
+                const arms = Array.from(document.querySelectorAll('[data-framer-name^="Arm"]'));
+                let globalIndex = 0;
 
-            const fillSlot = (container, logo) => {
-                container.classList.remove('orbit-logo-empty');
-                container.classList.add('orbit-logo-filled');
-                container.style.removeProperty('display');
-                container.style.setProperty('--orbit-logo-outline', logo.outline);
+                arms.forEach((arm) => {
+                    if (globalIndex >= logos.length) {
+                        arm.style.setProperty('display', 'none', 'important');
+                        const containers = Array.from(arm.querySelectorAll('div[class*="-container"]'));
+                        containers.forEach(c => c.style.setProperty('display', 'none', 'important'));
+                        return;
+                    }
 
-                let img = container.querySelector('img[alt="Logo"]');
-                if (!img) {
-                    img = document.createElement('img');
-                    img.alt = 'Logo';
-                    container.appendChild(img);
-                }
+                    const containers = Array.from(arm.querySelectorAll('div[class*="-container"]'));
+                    let filledAny = false;
+                    
+                    containers.forEach(container => {
+                        const logoSrc = logos[globalIndex];
 
-                img.dataset.orbitFilledLogo = 'true';
-                img.dataset.orbitLogoProcessed = 'true';
-                img.src = svgUrl(logo.svg);
-            };
+                        container.classList.remove('orbit-logo-empty');
+                        container.classList.add('orbit-logo-filled');
+                        container.style.removeProperty('display');
+                        
+                        container.style.setProperty('--orbit-logo-outline', 'transparent', 'important');
+                        container.style.setProperty('box-shadow', 'none', 'important');
+                        container.style.setProperty('border', 'none', 'important');
+                        container.style.setProperty('outline', 'none', 'important');
+                        container.style.setProperty('overflow', 'hidden', 'important');
+                        container.style.setProperty('border-radius', '50%', 'important');
+                        container.style.setProperty('padding', '0', 'important');
+                        container.style.setProperty('background', 'transparent', 'important');
 
-            const fillEmptySlots = () => {
-                const containers = Array.from(document.querySelectorAll('[data-framer-name^="Arm"] > div[class*="-container"]'));
-                const emptySlots = containers.filter((container) => {
-                    const img = container.querySelector('img[alt="Logo"]');
-                    return container.classList.contains('orbit-logo-empty') || !img || img.dataset.orbitLogoProcessed === 'empty';
-                });
+                        let img = container.querySelector('img');
+                        if (!img) {
+                            img = document.createElement('img');
+                            img.alt = 'Logo';
+                            container.appendChild(img);
+                        }
 
-                emptySlots.slice(0, logos.length).forEach((container, index) => fillSlot(container, logos[index]));
-            };
+                        const currentSrc = img.getAttribute('src') || '';
+                        if (!currentSrc.endsWith(logoSrc)) {
+                            img.dataset.orbitFilledLogo = 'true';
+                            img.dataset.orbitLogoProcessed = 'true';
+                            img.src = logoSrc;
+                        }
 
-            const speedUpOrbit = () => {
-                document.getAnimations().forEach((animation) => {
-                    const target = animation.effect && animation.effect.target;
-                    if (target && target.closest && target.closest('[data-framer-name^="Arm"]')) {
-                        animation.playbackRate = 1.8;
+                        img.style.setProperty('width', '100%', 'important');
+                        img.style.setProperty('height', '100%', 'important');
+                        img.style.setProperty('object-fit', 'cover', 'important');
+                        img.style.setProperty('border-radius', '50%', 'important');
+                        img.style.setProperty('display', 'block', 'important');
+                        img.style.setProperty('margin', '0', 'important');
+                        img.style.setProperty('padding', '0', 'important');
+                        img.style.setProperty('border', 'none', 'important');
+                        img.style.setProperty('outline', 'none', 'important');
+                        
+                        filledAny = true;
+                    });
+                    
+                    if (filledAny) {
+                        globalIndex++;
                     }
                 });
             };
 
             const update = () => {
-                fillEmptySlots();
-                speedUpOrbit();
+                fillAllSlots();
             };
 
             update();
             setTimeout(update, 500);
             setTimeout(update, 1500);
             setInterval(update, 2500);
-            new MutationObserver(update).observe(document.body, { childList: true, subtree: true });
         })();
     </script>
 <script>
@@ -936,22 +959,200 @@
             update();
         })();
     </script>
+<style>
+.home-end-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  background: transparent;
+  color: #fff;
+  font-family: Inter, sans-serif;
+  gap: 60px;
+}
+.home-end-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.home-end-eyebrow {
+  color: #a78bfa;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.home-end-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, #fff, rgba(255,255,255,0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-end-subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+.home-end-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.home-end-faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home-end-faq-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.home-end-cta {
+  background: linear-gradient(180deg, rgba(79, 26, 214, 0.2) 0%, rgba(0,0,0,0) 100%);
+  border: 1px solid rgba(79, 26, 214, 0.3);
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-end-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgb(79, 26, 214) 0%, rgb(227, 89, 89) 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+.home-end-button:hover {
+  opacity: 0.9;
+}
+</style>
 <script>
-        (function keepHomeFaqVisible() {
-            const update = () => {
-                const path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
-                const hash = (window.location.hash || '').toLowerCase();
-                const isHomePath = path === '/' || path.endsWith('/index.html');
-                const isHomeHash = hash === '' || hash === '#' || hash === '#home' || hash === '#/';
-                const isHome = isHomePath && isHomeHash;
-                document.body.classList.toggle('is-home-view', isHome);
-            };
-            update();
-            window.addEventListener('hashchange', update);
-            window.addEventListener('popstate', update);
-            setTimeout(update, 500);
-            setTimeout(update, 1500);
-        })();
+      (function keepHomeFaqVisible() {
+        const faqItems = [
+          "What do I need to get started?",
+          "What kind of customization is available for telecom IVR solutions?",
+          "How secure are NForce’s AI systems and voice solutions?",
+          "How does pricing work for model usage and agentic AI?",
+          "Can your AI scale with telecom traffic spikes?",
+          "What kind of managed services support is available?",
+        ];
+
+        const buildHomeEnd = () => {
+          const section = document.createElement("section");
+          section.id = "home-faq";
+          section.className = "home-end-section";
+          section.dataset.nforceHomeFaq = "true";
+          section.innerHTML = `
+            <div class="home-end-container">
+              <div>
+                <div class="home-end-eyebrow">FAQ</div>
+                <h2 class="home-end-title">Frequently<br>Asked Questions</h2>
+                <p class="home-end-subtitle">Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.</p>
+                <div class="home-end-faq-list">
+                  ${faqItems.map((question) => `<div class="home-end-faq-item">${question}</div>`).join("")}
+                </div>
+              </div>
+              <div class="home-end-cta">
+                <div class="home-end-eyebrow">Become a Part of Us</div>
+                <h2 class="home-end-title">Ready to Elevate Your Brand<br>with Next-Gen Innovation?</h2>
+                <p class="home-end-subtitle">Contact our specialists to transform your telecom operations with AI.</p>
+                <a class="home-end-button" href="./#contact">Contact us</a>
+              </div>
+            </div>
+          `;
+          return section;
+        };
+
+        const updateFooterText = () => {
+          document
+            .querySelectorAll("footer span, footer p, footer a")
+            .forEach((element) => {
+              if ((element.textContent || "").includes("2024 NFORCE 1")) {
+                element.textContent = "© 2024 NFORCE 1";
+              }
+            });
+        };
+
+        const setOriginalEndSectionsHidden = (hidden) => {
+          document
+            .querySelectorAll(
+              'section[data-framer-name="FAQ"], section[data-framer-name="CTA"], section[data-framer-name="Support"]'
+            )
+            .forEach((section) => {
+              if (section.dataset.nforceHomeFaq === "true") return;
+              if (hidden) {
+                section.style.setProperty("display", "none", "important");
+                section.setAttribute("aria-hidden", "true");
+              } else {
+                section.style.removeProperty("display");
+                section.removeAttribute("aria-hidden");
+              }
+            });
+        };
+
+        const update = () => {
+          const path = (window.location.pathname || "/").replace(/\\/+$/, "") || "/";
+          const hash = (window.location.hash || "").toLowerCase();
+          const isHomePath = path === "/" || path.endsWith("/index.html");
+          const isHomeHash = hash === "" || hash === "#" || hash === "#home" || hash === "#/";
+          const isHome = isHomePath && isHomeHash;
+          document.body.classList.toggle("is-home-view", isHome);
+          setOriginalEndSectionsHidden(isHome);
+          updateFooterText();
+
+          const injectedSections = Array.from(
+            document.querySelectorAll('[data-nforce-home-faq="true"]')
+          );
+          const existing = injectedSections[0];
+          injectedSections.slice(1).forEach((section) => section.remove());
+
+          if (!isHome) {
+            existing?.remove();
+            return;
+          }
+
+          const footer = document.querySelector("footer");
+          const footerWrapper = footer?.parentElement || footer;
+          if (!footerWrapper || !footerWrapper.parentElement) return;
+          footer.style.removeProperty("display");
+          footer.removeAttribute("aria-hidden");
+
+          const homeEnd = existing || buildHomeEnd();
+          homeEnd.style.removeProperty("display");
+          homeEnd.removeAttribute("aria-hidden");
+          if (!existing || homeEnd.nextElementSibling !== footerWrapper) {
+            footerWrapper.parentElement.insertBefore(homeEnd, footerWrapper);
+          }
+        };
+        update();
+        window.addEventListener("hashchange", update);
+        window.addEventListener("popstate", update);
+        setTimeout(update, 500);
+        setTimeout(update, 1500);
+        setInterval(update, 2000);
+        new MutationObserver(update).observe(document.body, { childList: true, subtree: true });
+      })();
     </script>
     
 
