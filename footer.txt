@@ -1,0 +1,160 @@
+<footer class="framer-3TVv4 framer-ELOEn framer-z20imy framer-v-1mpq8ij" data-border="true"
+            data-framer-name="S"
+            style="--border-bottom-width:0px;--border-color:var(--token-d86f1591-0c16-44cd-be10-19334dfa9293, rgba(255, 255, 255, 0.1));--border-left-width:0px;--border-right-width:0px;--border-style:solid;--border-top-width:1px;background:conic-gradient(from 0deg at 50% 0%, rgb(0, 0, 0) 90deg, rgba(214, 26, 26, 0.41) 181.2985641891892deg, rgb(0, 0, 0) 270deg);width:100%">
+            <div class="framer-qluo01" data-framer-name="Top">
+              <div class="framer-1njellx" data-framer-name="Left"><!--$--><a as="a"
+                  class="framer-1xq6p9a framer-1ukbytl" data-framer-name="Logo" href="./"
+                  data-framer-page-link-current="true">
+                  <div
+                    style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"
+                    data-framer-background-image-wrapper="true"><img decoding="async" width="1137" height="400"
+                      sizes="(min-width: 1200px) max(160px, 193.6px), (min-width: 810px) and (max-width: 1199.98px) max(160px, 193.6px), (max-width: 809.98px) max(160px, 193.6px)"
+                      srcset="https://framerusercontent.com/images/N8r2TYdcQk7G9DR454CYJ4axUM.png?scale-down-to=512&amp;width=1137&amp;height=400 512w,https://framerusercontent.com/images/N8r2TYdcQk7G9DR454CYJ4axUM.png?scale-down-to=1024&amp;width=1137&amp;height=400 1024w,https://framerusercontent.com/images/N8r2TYdcQk7G9DR454CYJ4axUM.png?width=1137&amp;height=400 1137w"
+                      src="https://framerusercontent.com/images/N8r2TYdcQk7G9DR454CYJ4axUM.png?width=1137&amp;height=400"
+                      alt
+                      style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover">
+                  </div>
+                </a><!--/$--></div>
+              <div class="framer-fnx7o9" data-framer-name="Right">
+                <div class="framer-1jltczg" data-framer-name="Pages">
+                  <div class="framer-wdq88k" data-framer-name="Top">
+                    <div class="framer-1rl1jwu" data-framer-name="Text" data-framer-component-type="RichTextContainer"
+                      style="--framer-paragraph-spacing:0px;transform:none">
+                      <h4 class="framer-text framer-styles-preset-1ing3ma" data-styles-preset="VnmEZ_3BZ" dir="auto">
+                        NForceOne.ai</h4>
+                    </div>
+                  </div>
+                  <div class="framer-pxkf8m" data-framer-name="Navigation/Menu Items"><!--$-->
+                    <div class="framer-as62wa-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="./"
+                        data-framer-page-link-current="true" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">Home</span>
+                          </p>
+                        </div>
+                      </a><!--/$--></div><!--/$--><!--$-->
+                    <div class="framer-gketd9-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="./about" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">About
+                              us</span></p>
+                        </div>
+                      </a><!--/$--></div><!--/$--><!--$-->
+                    <div class="framer-18pf3ae-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="./#services" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">Services</span>
+                          </p>
+                        </div>
+                      </a><!--/$--></div><!--/$--><!--$-->
+                    <div class="framer-1hx2e9w-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="javascript:void(0)" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">Contact</span>
+                          </p>
+                        </div>
+                      </a><!--/$--></div><!--/$--><!--$-->
+                    <div class="framer-yzbvl3-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">FAQ</span>
+                          </p>
+                        </div>
+                      </a><!--/$--></div><!--/$-->
+                  </div>
+                </div>
+                <div class="framer-8c1gx3" data-framer-name="Social">
+                  <div class="framer-1j0014u" data-framer-name="Top">
+                    <div class="framer-uizqdh" data-framer-name="Text" data-framer-component-type="RichTextContainer"
+                      style="--framer-paragraph-spacing:0px;transform:none">
+                      <h4 class="framer-text framer-styles-preset-1ing3ma" data-styles-preset="VnmEZ_3BZ">Social</h4>
+                    </div>
+                  </div>
+                  <div class="framer-11pn9ct" data-framer-name="Bottom">
+                    <div class="framer-igfsmi-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true"
+                        href="https://www.linkedin.com/company/nforce-one/posts/?feedView=all" target="_blank"
+                        rel="noopener" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">Linkedin</span>
+                          </p>
+                        </div>
+                      </a><!--/$--></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="framer-g1rbiy" data-framer-name="Bottom">
+              <div class="framer-u157m0" data-framer-name="Seperator"
+                style="background:linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%)">
+              </div>
+              <div class="framer-1bzffsm" data-framer-name="Content">
+                <div class="framer-1dc31xf" data-framer-name="Left">
+                  <div class="framer-1kjbmpx-container"><!--$--><a
+                      class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                      data-framer-name="In-Active" data-highlight="true" href="https://x.com/MandroDesign"
+                      target="_blank" rel="noopener" tabindex="0">
+                      <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                        style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                        <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                          style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                            data-text-fill="true" class="framer-text"
+                            style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">�
+                            2024 NFORCE 1</span></p>
+                      </div>
+                    </a><!--/$--></div>
+                </div>
+                <div class="framer-1su39qg" data-framer-name="Right">
+                  <div class="framer-1027xeg" data-framer-name="Left"><!--$-->
+                    <div class="framer-fqk9co-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="./terms-conditions" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.6;transform:none">
+                          <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
+                            style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255))"><span
+                              data-text-fill="true" class="framer-text"
+                              style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%)">Terms
+                              &amp; Conditions</span></p>
+                        </div>
+                      </a><!--/$--></div><!--/$-->
+                  </div>
+                  <div class="framer-m4fgmb" data-framer-name="Seperator"
+                    style="background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%)">
+                  </div>
+                  <div class="framer-1qhiyeb" data-framer-name="Right"><!--$-->
+                    <div class="framer-1mjax5b-container"><!--$--><a
+                        class="framer-GPjkJ framer-CjDlz framer-a47mct framer-v-a47mct framer-i9k05o"
+                        data-framer-name="In-Active" data-highlight="true" href="./privacy-policy" tabindex="0">
+                        <div class="framer-oap6fz" data-framer-component-type="RichTextContainer"
+                          style="--extracted-r6o4lv:rgb(255, 255, 255);--framer-link-text-
