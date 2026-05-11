@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18578,23 +18578,21 @@
         // Add Address to Footer (Dynamic injection to survive React hydration)
         const leftContainers = document.querySelectorAll('footer div[data-framer-name="Left"]');
         leftContainers.forEach(container => {
-           const logo = container.querySelector('a[data-framer-name="Logo"]');
-           if (logo && !container.querySelector('.custom-footer-address')) {
-              const addressDiv = document.createElement('div');
-              addressDiv.className = 'custom-footer-address framer-oap6fz';
-              addressDiv.style.cssText = 'opacity:0.6;transform:none;max-width:100%;margin-top:20px;';
-              addressDiv.innerHTML = `
+          const logo = container.querySelector('a[data-framer-name="Logo"]');
+          if (logo && !container.querySelector('.custom-footer-address')) {
+            const addressDiv = document.createElement('div');
+            addressDiv.className = 'custom-footer-address framer-oap6fz';
+            addressDiv.style.cssText = 'opacity:0.6;transform:none;max-width:100%;margin-top:20px;';
+            addressDiv.innerHTML = `
                 <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U" style="--framer-text-color: rgb(255, 255, 255);">
                   <span data-text-fill="true" class="framer-text" style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409%); line-height: 1.6;">
-                    Sanali Spazio, 4th Floor,<br>
-                    Plot No.19, Software Unit Layout,<br>
-                    HITEC City, Secunderabad,<br>
-                    Hyderabad, Telangana 500081
+                    4th Floor, Sanali Spazio, Inorbit Mall Road,
+                    Madhapur, Hyderabad, Telangana, 500081, India 
                   </span>
                 </p>
               `;
-              container.appendChild(addressDiv);
-           }
+            container.appendChild(addressDiv);
+          }
         });
       };
 
@@ -18604,4 +18602,5 @@
     })();
   </script>
 </body>
+
 </html>
