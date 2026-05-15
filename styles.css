@@ -170,123 +170,149 @@ body:not(.is-home-view) section[data-framer-name="Support"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0a0a0a;
-    padding: 40px 20px;
+    background: radial-gradient(circle at 50% 50%, #1a0a0a 0%, #0a0a0a 100%);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(220, 70, 70, 0.1) 0%, transparent 70%);
+    top: 10%;
+    right: 10%;
+    filter: blur(60px);
+    z-index: 1;
 }
 
 .form-container {
-    max-width: 1200px;
+    max-width: 800px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
     padding: 60px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .form-title {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 12px;
     color: #ffffff;
+    text-align: center;
+    letter-spacing: -1px;
 }
 
 .form-subtitle {
     font-size: 16px;
-    color: #b0b0b0;
-    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 48px;
+    text-align: center;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 24px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    background-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 14px 16px;
+    border-radius: 12px;
+    padding: 16px;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 15px;
     font-family: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-group input::placeholder,
-.form-group select::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .form-group input:focus,
-.form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(220, 70, 70, 0.5);
-    box-shadow: 0 0 0 3px rgba(220, 70, 70, 0.1);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(220, 70, 70, 0.6);
+    box-shadow: 0 0 0 4px rgba(220, 70, 70, 0.15);
+    transform: translateY(-2px);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
-}
-
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-    cursor: pointer;
+    min-height: 140px;
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #dc4646 0%, #e85555 100%);
+    background: linear-gradient(135deg, #dc4646 0%, #a52a2a 100%);
     color: white;
     border: none;
-    padding: 16px 40px;
+    padding: 18px 40px;
     font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
+    font-weight: 700;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 24px rgba(220, 70, 70, 0.3);
-    letter-spacing: 0.5px;
-    margin-top: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 12px;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(220, 70, 70, 0.4);
-    background: linear-gradient(135deg, #e85555 0%, #f06464 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(220, 70, 70, 0.5);
+    background: linear-gradient(135deg, #e85555 0%, #dc4646 100%);
 }
 
 .submit-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(220, 70, 70, 0.3);
+    transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Responsive Design */
@@ -296,18 +322,16 @@ body:not(.is-home-view) section[data-framer-name="Support"] {
     }
 
     .form-container {
-        padding: 40px 20px;
+        padding: 40px 24px;
+        border-radius: 20px;
     }
 
     .form-title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 12px 14px;
-        font-size: 13px;
+    .form-subtitle {
+        margin-bottom: 32px;
     }
 }
 
