@@ -14552,7 +14552,7 @@
           <div class="form-container">
             <h2 class="form-title">Contact Us</h2>
             <p class="form-subtitle">Get in touch with our specialists.</p>
-            <form class="contact-form" action="#" method="POST">
+            <form id="contact-form" class="contact-form" action="javascript:void(0);" method="POST">
               
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -15329,38 +15329,7 @@
 
   <!-- End of bodyEnd -->
 
-  <script>
-    /* NFORCE SPA DECOUPLER - Forces hard navigation to separate layouts */
-    document.addEventListener('click', function (e) {
-      const link = e.target.closest('a');
-      if (link && link.href && (link.href.includes('.html') || link.href.endsWith('/'))) {
-        // Force browser to load the new layout from the server
-        window.location.href = link.href;
-        e.stopImmediatePropagation();
-        e.preventDefault();
-      }
-    }, true);
-  </script>
-
-  <script>
-    /* NFORCE ARCHITECTURAL ROUTER - Enforces Layout Separation */
-    document.addEventListener('click', function (e) {
-      const link = e.target.closest('a');
-      if (link && link.href && !link.href.includes('#')) {
-        window.location.href = link.href;
-        e.preventDefault();
-        e.stopImmediatePropagation();
-      }
-    }, true);
-  </script>
-
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function() {
-      emailjs.init("QvqQU5BbHg18M_tsj");
-    })();
-  </script>
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -15399,6 +15368,54 @@
       });
     });
   </script>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS
+  emailjs.init("QvqQU5BbHg18M_tsj");
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+
+      emailjs.sendForm(
+        "service_2jk5dlv",
+        "template_ri39fg6",
+        this
+      )
+      .then(() => {
+        btn.textContent = "✅ Sent!";
+        btn.style.background = "#22c55e";
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = "";
+          btn.disabled = false;
+        }, 4000);
+      })
+      .catch((error) => {
+        console.error("FAILED...", error);
+        btn.textContent = "❌ Error";
+        btn.style.background = "#ef4444";
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = "";
+          btn.disabled = false;
+        }, 4000);
+      });
+    });
+  });
+</script>
 </body>
 
 
