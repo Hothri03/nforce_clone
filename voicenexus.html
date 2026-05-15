@@ -14579,8 +14579,7 @@
                     <!-- Web3Forms settings -->
               <input type="hidden" name="access_key" value="fa1f0711-5994-4c13-8503-099d281b3649">
               <input type="hidden" name="subject" value="New Contact Form Submission - NForce One AI">
-              <input type="hidden" name="redirect" value="false">
-                    <button type="submit" class="submit-btn">Submit Request</button>
+                                  <button type="submit" class="submit-btn">Submit Request</button>
                 </form>
             </div>
         </section>
@@ -15368,6 +15367,55 @@
         }
       }, true);
     </script>
+
+  <script>
+    // Web3Forms handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('.contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const json = await res.json();
+          if (json.success) {
+            btn.textContent = '✅ Message Sent!';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            form.reset();
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+          } else {
+            throw new Error(json.message || 'Submission failed');
+          }
+        } catch (err) {
+          btn.textContent = '❌ Failed. Try again.';
+          btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+          console.error('Form error:', err);
+        }
+      });
+    });
+  </script>
 </body>
 
 
