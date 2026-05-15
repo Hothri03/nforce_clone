@@ -14551,7 +14551,7 @@
             <div class="form-container">
                 <h2 class="form-title">Contact Us</h2>
                 <p class="form-subtitle">Get in touch with our specialists.</p>
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <form class="contact-form" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
@@ -14576,10 +14576,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
                     </div>
-                    <!-- Web3Forms settings -->
-              <input type="hidden" name="access_key" value="04203091-c1fb-410f-a718-66218ee56cc2">
-              <input type="hidden" name="subject" value="New Contact Form Submission - NForce One AI">
-                                  <button type="submit" class="submit-btn">Submit Request</button>
+                    <button type="submit" class="submit-btn">Submit Request</button>
                 </form>
             </div>
         </section>
@@ -15368,30 +15365,30 @@
       }, true);
     </script>
 
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("QvqQU5BbHg18M_tsj");
+    })();
+  </script>
+
   <script>
-    // Web3Forms handler
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.querySelector('.contact-form');
       if (!form) return;
 
-      form.addEventListener('submit', async function (e) {
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
+        
         const btn = form.querySelector('.submit-btn');
         const originalText = btn.textContent;
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        try {
-          const res = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          });
-          const json = await res.json();
-          if (json.success) {
+        // Map form fields to EmailJS (EmailJS can take the form element directly)
+        emailjs.sendForm('service_2jk5dlv', 'template_ri39fg6', form)
+          .then(function() {
             btn.textContent = '✅ Message Sent!';
             btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
             form.reset();
@@ -15400,19 +15397,16 @@
               btn.style.background = '';
               btn.disabled = false;
             }, 4000);
-          } else {
-            throw new Error(json.message || 'Submission failed');
-          }
-        } catch (err) {
-          btn.textContent = '❌ Failed. Try again.';
-          btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 4000);
-          console.error('Form error:', err);
-        }
+          }, function(error) {
+            btn.textContent = '❌ Failed. Try again.';
+            btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+            console.error('EmailJS Error:', error);
+          });
       });
     });
   </script>
