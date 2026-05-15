@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16681,7 +16681,7 @@
           <div class="form-container">
             <h2 class="form-title">Contact Us</h2>
             <p class="form-subtitle">Get in touch with our specialists.</p>
-            <form class="contact-form" action="https://formsubmit.co/hothriyarlagadda@gmail.com" method="POST">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/hothriyarlagadda@gmail.com" method="POST">
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name</label>
@@ -16813,14 +16813,10 @@
 
 
                 <!--/$-->
-                <div class="framer-oap6fz" data-framer-name="Address" data-framer-component-type="RichTextContainer"
-                  style="--extracted-r6o4lv:rgb(255, 255, 255);opacity:1;transform:none;max-width:100%;margin-top:20px;">
-                  <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
-                    style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255));">
-                    <span data-text-fill="true" class="framer-text"
-                      style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%); line-height: 1.6;">4th
-                      Floor, Sanali Spazio, Inorbit Mall Road,<br>
-                      Madhapur, Hyderabad, Telangana, 500081, India</span>
+                <div class="footer-address-container" style="margin-top: 15px; text-align: left;">
+                  <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; margin: 0;">
+                    4th Floor, Sanali Spazio, Inorbit Mall Rd,<br>
+                    Madhapur, Hyderabad, Telangana, 500081, India
                   </p>
                 </div>
               </div>
@@ -17004,14 +17000,10 @@
 
 
                 <!--/$-->
-                <div class="framer-oap6fz" data-framer-name="Address" data-framer-component-type="RichTextContainer"
-                  style="--extracted-r6o4lv:rgb(255, 255, 255);opacity:1;transform:none;max-width:100%;margin-top:20px;">
-                  <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
-                    style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255));">
-                    <span data-text-fill="true" class="framer-text"
-                      style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%); line-height: 1.6;">4th
-                      Floor, Sanali Spazio, Inorbit Mall Road,<br>
-                      Madhapur, Hyderabad, Telangana, 500081, India</span>
+                <div class="footer-address-container" style="margin-top: 15px; text-align: left;">
+                  <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; margin: 0;">
+                    4th Floor, Sanali Spazio, Inorbit Mall Rd,<br>
+                    Madhapur, Hyderabad, Telangana, 500081, India
                   </p>
                 </div>
               </div>
@@ -17195,14 +17187,10 @@
 
 
                 <!--/$-->
-                <div class="framer-oap6fz" data-framer-name="Address" data-framer-component-type="RichTextContainer"
-                  style="--extracted-r6o4lv:rgb(255, 255, 255);opacity:1;transform:none;max-width:100%;margin-top:20px;">
-                  <p class="framer-text framer-styles-preset-x0s9r5" data-styles-preset="QhK6qqT5U"
-                    style="--framer-text-color:var(--extracted-r6o4lv, rgb(255, 255, 255));">
-                    <span data-text-fill="true" class="framer-text"
-                      style="background-image:linear-gradient(90deg, var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255)) 0%, var(--token-69ff14d1-f0d2-4345-baec-a0ff0f57f0ca, rgba(153, 153, 153, 0)) 409.99999999999994%); line-height: 1.6;">4th
-                      Floor, Sanali Spazio, Inorbit Mall Road,<br>
-                      Madhapur, Hyderabad, Telangana, 500081, India</span>
+                <div class="footer-address-container" style="margin-top: 15px; text-align: left;">
+                  <p style="color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; margin: 0;">
+                    4th Floor, Sanali Spazio, Inorbit Mall Rd,<br>
+                    Madhapur, Hyderabad, Telangana, 500081, India
                   </p>
                 </div>
               </div>
@@ -18072,45 +18060,122 @@
 
       const fixAddress = () => {
         const addrPlaceholder = "Software Unit Layout";
-        document.querySelectorAll('footer span, footer p').forEach(el => {
-          if (el.textContent.includes(addrPlaceholder)) {
-            el.innerHTML = "4th Floor, Sanali Spazio, Inorbit Mall Road,<br>Madhapur, Hyderabad, Telangana, 500081, India";
-            // Force visibility
+        document.querySelectorAll('footer span, footer p, .footer-address-container').forEach(el => {
+          if (el.textContent.includes(addrPlaceholder) || el.classList.contains('footer-address-container')) {
+            if (!el.classList.contains('footer-address-container')) {
+              el.innerHTML = "4th Floor, Sanali Spazio, Inorbit Mall Rd,<br>Madhapur, Hyderabad, Telangana, 500081, India";
+            }
+            // Force visibility and alignment
             let p = el.parentElement;
             while (p && p.tagName !== 'FOOTER') {
               p.style.opacity = "1";
+              if (p.getAttribute('data-framer-name') === 'Left') {
+                p.style.display = "flex";
+                p.style.flexDirection = "column";
+                p.style.alignItems = "flex-start";
+              }
               p = p.parentElement;
             }
           }
         });
       };
 
-      const sync = () => {
-        const service = isServicePage();
-        if (service) {
-          cleanServiceLayout();
-        } else {
-          restoreHomeLayout();
+    // Sync the address and layout
+    const sync = () => {
+      const service = isServicePage();
+      if (service) {
+        cleanServiceLayout();
+      } else {
+        restoreHomeLayout();
+      }
+      fixAddress();
+
+      // LinkedIn fix
+      document.querySelectorAll('a').forEach(a => {
+        if (a.href.includes('linkedin.com/company/nforce') && !a.href.includes('posts')) {
+          a.href = "https://www.linkedin.com/company/nforceone/posts/?feedView=all";
+          a.setAttribute('target', '_blank');
         }
-        fixAddress();
+      });
+    };
 
-        // Stabilize LinkedIn
-        document.querySelectorAll('a').forEach(a => {
-          if (a.href.includes('linkedin.com/company/nforce') && !a.href.includes('posts')) {
-            a.href = "https://www.linkedin.com/company/nforceone/posts/?feedView=all";
-            a.setAttribute('target', '_blank');
-          }
-        });
-      };
+    // Global Footer Fix CSS
+    const style = document.createElement('style');
+    style.innerHTML = `
+      [data-framer-name="Top"] {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        padding-bottom: 40px !important;
+      }
+      [data-framer-name="Left"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+      }
+      [data-framer-name="Right"] {
+        display: flex !important;
+        gap: 60px !important;
+        align-items: flex-start !important;
+      }
+      [data-framer-name="Address"] {
+        margin-top: 16px !important;
+      }
+    `;
+    document.head.appendChild(style);
 
-      window.addEventListener('popstate', sync);
-      window.addEventListener('hashchange', sync);
-      new MutationObserver(sync).observe(document.body, { childList: true, subtree: true });
-      sync();
-      setTimeout(sync, 500);
-      setTimeout(sync, 1500);
-      console.log("NForce Orchestrator v6.0 Active");
-    })();
+    window.addEventListener('popstate', sync);
+    window.addEventListener('hashchange', sync);
+    new MutationObserver(sync).observe(document.body, { childList: true, subtree: true });
+    sync();
+    setTimeout(sync, 500);
+    setTimeout(sync, 1500);
+    console.log("NForce Orchestrator v6.0 Active");
+  })();
+</script>
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // Initialize EmailJS
+    emailjs.init("QvqQU5BbHg18M_tsj");
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const btn = form.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        // Map form fields to EmailJS (EmailJS can take the form element directly)
+        emailjs.sendForm('service_2jk5dlv', 'template_ri39fg6', form)
+          .then(function () {
+            btn.textContent = '✅ Message Sent!';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            form.reset();
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+          }, function (error) {
+            console.error('EmailJS Error:', error);
+            btn.textContent = '❌ Error';
+            btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+          });
+      });
+    });
   </script>
 </body>
 
