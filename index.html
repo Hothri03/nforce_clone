@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16678,31 +16678,39 @@
           </div>
         </div>
         <section class="contact-section" id="contact">
-            <div class="form-container">
-                <h2 class="form-title">Contact Us</h2>
-                <p class="form-subtitle">Get in touch with our specialists.</p>
-                <form id="contact-form" class="contact-form" action="javascript:void(0);" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
+          <div class="form-container">
+            <h2 class="form-title">Contact Us</h2>
+            <p class="form-subtitle">Get in touch with our specialists.</p>
+            <form class="contact-form" action="https://formsubmit.co/hothriyarlagadda@gmail.com" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="First Name" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="Last Name" placeholder="Last Name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone (Optional)</label>
+                  <input type="text" id="phone" name="Phone" placeholder="Phone Number">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+              </div>
+              <!-- FormSubmit settings -->
+              <input type="hidden" name="_captcha" value="false">
+              <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+          </div>
         </section>
         <div class="ssr-variant hidden-bt281z hidden-cgi17f">
           <div class="framer-j0w1lv-container">
@@ -17389,51 +17397,720 @@
     </div>
     <div id="template-overlay"></div><!--/$--><!--/$-->
   </div>
-  
+  <script>(() => { function u() { function n(t, e, i) { let r = document.createElement("a"); r.href = t, r.target = i, r.rel = e, document.body.appendChild(r), r.click(), r.remove() } function o(t) { if (this.dataset.hydrated) { this.removeEventListener("click", o); return } t.preventDefault(), t.stopPropagation(); let e = this.getAttribute("href"); if (!e) return; if (/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent) ? t.metaKey : t.ctrlKey) return n(e, "", "_blank"); let r = this.getAttribute("rel") ?? "", c = this.getAttribute("target") ?? ""; n(e, r, c) } function a(t) { if (this.dataset.hydrated) { this.removeEventListener("auxclick", o); return } t.preventDefault(), t.stopPropagation(); let e = this.getAttribute("href"); e && n(e, "", "_blank") } function s(t) { if (this.dataset.hydrated) { this.removeEventListener("keydown", s); return } if (t.key !== "Enter") return; t.preventDefault(), t.stopPropagation(); let e = this.getAttribute("href"); if (!e) return; let i = this.getAttribute("rel") ?? "", r = this.getAttribute("target") ?? ""; n(e, i, r) } document.querySelectorAll("[data-nested-link]").forEach(t => { t instanceof HTMLElement && (t.addEventListener("click", o), t.addEventListener("auxclick", a), t.addEventListener("keydown", s)) }) } return u })()()</script>
+  <script>!function () {
+      var w = "framer_variant"; function u(a, r) { let e = r.indexOf("#"), t = e === -1 ? r : r.substring(0, e), o = e === -1 ? "" : r.substring(e), n = t.indexOf("?"), h = n === -1 ? t : t.substring(0, n), d = n === -1 ? "" : t.substring(n), s = new URLSearchParams(d), m = new URLSearchParams(a); for (let [i, l] of m) s.has(i) || i !== w && s.append(i, l); let c = s.toString(); return c === "" ? t + o : h + "?" + c + o } var g = 'div#main a[href^="#"],div#main a[href^="/"],div#main a[href^="."]', f = "div#main a[data-framer-preserve-params]", S = document.currentScript?.hasAttribute("data-preserve-internal-params"); if (window.location.search && !navigator.webdriver && !/bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)) { let a = document.querySelectorAll(S ? `${g},${f}` : f); for (let r of a) { let e = u(window.location.search, r.href); r.setAttribute("href", e) } }
+    }()</script>
 
-  <!-- EmailJS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>var animator = (() => { var L = (e, r, t) => t > r ? r : t < e ? e : t; var U = () => { }; function _(e) { let r; return () => (r === void 0 && (r = e()), r) } var Q = e => e; var D = e => e * 1e3, O = e => e / 1e3; var J = e => Array.isArray(e) && typeof e[0] == "number"; var ee = { value: null, addProjectionMetrics: null }; var re = { layout: 0, mainThread: 0, waapi: 0 }; var $ = (e, r, t = 10) => { let o = "", s = Math.max(Math.round(r / t), 2); for (let i = 0; i < s; i++)o += Math.round(e(i / (s - 1)) * 1e4) / 1e4 + ", "; return `linear(${o.substring(0, o.length - 2)})` }; function j(e) { let r = 0, t = 50, o = e.next(r); for (; !o.done && r < 2e4;)r += t, o = e.next(r); return r >= 2e4 ? 1 / 0 : r } function ye(e, r = 100, t) { let o = t({ ...e, keyframes: [0, r] }), s = Math.min(j(o), 2e4); return { type: "keyframes", ease: i => o.next(s * i).value / r, duration: O(s) } } var g = { stiffness: 100, damping: 10, mass: 1, velocity: 0, duration: 800, bounce: .3, visualDuration: .3, restSpeed: { granular: .01, default: 2 }, restDelta: { granular: .005, default: .5 }, minDuration: .01, maxDuration: 10, minDamping: .05, maxDamping: 1 }; function ne(e, r) { return e * Math.sqrt(1 - r * r) } var Be = 12; function Ke(e, r, t) { let o = t; for (let s = 1; s < Be; s++)o = o - e(o) / r(o); return o } var oe = .001; function Ge({ duration: e = g.duration, bounce: r = g.bounce, velocity: t = g.velocity, mass: o = g.mass }) { let s, i; U(e <= D(g.maxDuration), "Spring duration must be 10 seconds or less", "spring-duration-limit"); let n = 1 - r; n = L(g.minDamping, g.maxDamping, n), e = L(g.minDuration, g.maxDuration, O(e)), n < 1 ? (s = m => { let p = m * n, c = p * e, u = p - t, x = ne(m, n), A = Math.exp(-c); return oe - u / x * A }, i = m => { let c = m * n * e, u = c * t + t, x = Math.pow(n, 2) * Math.pow(m, 2) * e, A = Math.exp(-c), d = ne(Math.pow(m, 2), n); return (-s(m) + oe > 0 ? -1 : 1) * ((u - x) * A) / d }) : (s = m => { let p = Math.exp(-m * e), c = (m - t) * e + 1; return -oe + p * c }, i = m => { let p = Math.exp(-m * e), c = (t - m) * (e * e); return p * c }); let f = 5 / e, a = Ke(s, i, f); if (e = D(e), isNaN(a)) return { stiffness: g.stiffness, damping: g.damping, duration: e }; { let m = Math.pow(a, 2) * o; return { stiffness: m, damping: n * 2 * Math.sqrt(o * m), duration: e } } } var Le = ["duration", "bounce"], Re = ["stiffness", "damping", "mass"]; function Ae(e, r) { return r.some(t => e[t] !== void 0) } function ze(e) { let r = { velocity: g.velocity, stiffness: g.stiffness, damping: g.damping, mass: g.mass, isResolvedFromDuration: !1, ...e }; if (!Ae(e, Re) && Ae(e, Le)) if (r.velocity = 0, e.visualDuration) { let t = e.visualDuration, o = 2 * Math.PI / (t * 1.2), s = o * o, i = 2 * L(.05, 1, 1 - (e.bounce || 0)) * Math.sqrt(s); r = { ...r, mass: g.mass, stiffness: s, damping: i } } else { let t = Ge({ ...e, velocity: 0 }); r = { ...r, ...t, mass: g.mass }, r.isResolvedFromDuration = !0 } return r } function E(e = g.visualDuration, r = g.bounce) { let t = typeof e != "object" ? { visualDuration: e, keyframes: [0, 1], bounce: r } : e, { restSpeed: o, restDelta: s } = t, i = t.keyframes[0], n = t.keyframes[t.keyframes.length - 1], f = { done: !1, value: i }, { stiffness: a, damping: m, mass: p, duration: c, velocity: u, isResolvedFromDuration: x } = ze({ ...t, velocity: -O(t.velocity || 0) }), A = u || 0, d = m / (2 * Math.sqrt(a * p)), h = n - i, y = O(Math.sqrt(a / p)), F = Math.abs(h) < 5; o || (o = F ? g.restSpeed.granular : g.restSpeed.default), s || (s = F ? g.restDelta.granular : g.restDelta.default); let w, v, M, G, Y, H; if (d < 1) M = ne(y, d), G = (A + d * y * h) / M, w = l => { let T = Math.exp(-d * y * l); return n - T * (G * Math.sin(M * l) + h * Math.cos(M * l)) }, Y = d * y * G + h * M, H = d * y * h - G * M, v = l => Math.exp(-d * y * l) * (Y * Math.sin(M * l) + H * Math.cos(M * l)); else if (d === 1) { w = T => n - Math.exp(-y * T) * (h + (A + y * h) * T); let l = A + y * h; v = T => Math.exp(-y * T) * (y * l * T - A) } else { let l = y * Math.sqrt(d * d - 1); w = S => { let k = Math.exp(-d * y * S), P = Math.min(l * S, 300); return n - k * ((A + d * y * h) * Math.sinh(P) + l * h * Math.cosh(P)) / l }; let T = (A + d * y * h) / l, V = d * y * T - h * l, N = d * y * h - T * l; v = S => { let k = Math.exp(-d * y * S), P = Math.min(l * S, 300); return k * (V * Math.sinh(P) + N * Math.cosh(P)) } } let Z = { calculatedDuration: x && c || null, velocity: l => D(v(l)), next: l => { if (!x && d < 1) { let V = Math.exp(-d * y * l), N = Math.sin(M * l), S = Math.cos(M * l), k = n - V * (G * N + h * S), P = D(V * (Y * N + H * S)); return f.done = Math.abs(P) <= o && Math.abs(n - k) <= s, f.value = f.done ? n : k, f } let T = w(l); if (x) f.done = l >= c; else { let V = D(v(l)); f.done = Math.abs(V) <= o && Math.abs(n - T) <= s } return f.value = f.done ? n : T, f }, toString: () => { let l = Math.min(j(Z), 2e4), T = $(V => Z.next(l * V).value, l, 30); return l + "ms " + T }, toTransition: () => { } }; return Z } E.applyToOptions = e => { let r = ye(e, 100, E); return e.ease = r.ease, e.duration = D(r.duration), e.type = "keyframes", e }; var he = ["transformPerspective", "x", "y", "z", "translateX", "translateY", "translateZ", "scale", "scaleX", "scaleY", "rotate", "rotateX", "rotateY", "rotateZ", "skew", "skewX", "skewY"], ie = new Set(he); var Te = {}; function Me(e, r) { let t = _(e); return () => Te[r] ?? t() } var be = Me(() => { try { document.createElement("div").animate({ opacity: 0 }, { easing: "linear(0, 1)" }) } catch { return !1 } return !0 }, "linearEasing"); var C = ([e, r, t, o]) => `cubic-bezier(${e}, ${r}, ${t}, ${o})`; var ae = { linear: "linear", ease: "ease", easeIn: "ease-in", easeOut: "ease-out", easeInOut: "ease-in-out", circIn: C([0, .65, .55, 1]), circOut: C([.55, 0, 1, .45]), backIn: C([.31, .01, .66, -.59]), backOut: C([.33, 1.53, .69, .99]) }; function se(e, r) { if (e) return typeof e == "function" ? be() ? $(e, r) : "ease-out" : J(e) ? C(e) : Array.isArray(e) ? e.map(t => se(t, r) || ae.easeOut) : ae[e] } function W(e, r, t, { delay: o = 0, duration: s = 300, repeat: i = 0, repeatType: n = "loop", ease: f = "easeOut", times: a } = {}, m = void 0) { let p = { [r]: t }; a && (p.offset = a); let c = se(f, s); Array.isArray(c) && (p.easing = c), ee.value && re.waapi++; let u = { delay: o, duration: s, easing: Array.isArray(c) ? "linear" : c, fill: "both", iterations: i + 1, direction: n === "reverse" ? "alternate" : "normal" }; m && (u.pseudoElement = m); let x = e.animate(p, u); return ee.value && x.finished.finally(() => { re.waapi-- }), x } function ve(e) { return e.replace(/([A-Z])/g, r => `-${r.toLowerCase()}`) } var q = "framerAppearId", pe = "data-" + ve(q); function me(e) { return e.props[pe] } var b = new Map, I = new Map; var B = (e, r) => { let t = ie.has(r) ? "transform" : r; return `${e}: ${t}` }; function fe(e, r, t) { let o = B(e, r), s = b.get(o); if (!s) return null; let { animation: i, startTime: n } = s; function f() { window.MotionCancelOptimisedAnimation?.(e, r, t) } return i.onfinish = f, n === null || window.MotionHandoffIsComplete?.(e) ? (f(), null) : n } var X, K, ce = new Set; function Fe() { ce.forEach(e => { e.animation.play(), e.animation.startTime = e.startTime }), ce.clear() } function le(e, r, t, o, s) { if (window.MotionIsMounted) return; let i = e.dataset[q]; if (!i) return; window.MotionHandoffAnimation = fe; let n = B(i, r); K || (K = W(e, r, [t[0], t[0]], { duration: 1e4, ease: "linear" }), b.set(n, { animation: K, startTime: null }), window.MotionHandoffAnimation = fe, window.MotionHasOptimisedAnimation = (a, m) => { if (!a) return !1; if (!m) return I.has(a); let p = B(a, m); return !!b.get(p) }, window.MotionHandoffMarkAsComplete = a => { I.has(a) && I.set(a, !0) }, window.MotionHandoffIsComplete = a => I.get(a) === !0, window.MotionCancelOptimisedAnimation = (a, m, p, c) => { let u = B(a, m), x = b.get(u); x && (p && c === void 0 ? p.postRender(() => { p.postRender(() => { x.animation.cancel() }) }) : x.animation.cancel(), p && c ? (ce.add(x), p.render(Fe)) : (b.delete(u), b.size || (window.MotionCancelOptimisedAnimation = void 0))) }, window.MotionCheckAppearSync = (a, m, p) => { let c = me(a); if (!c) return; let u = window.MotionHasOptimisedAnimation?.(c, m), x = a.props.values?.[m]; if (!u || !x) return; let A = p.on("change", d => { x.get() !== d && (window.MotionCancelOptimisedAnimation?.(c, m), A()) }); return A }); let f = () => { K.cancel(); let a = W(e, r, t, o); X === void 0 && (X = performance.now()), a.startTime = X, b.set(n, { animation: a, startTime: X }), s && s(a) }; I.set(i, !1), K.ready ? K.ready.then(f).catch(Q) : f() } var ue = ["transformPerspective", "x", "y", "z", "translateX", "translateY", "translateZ", "scale", "scaleX", "scaleY", "rotate", "rotateX", "rotateY", "rotateZ", "skew", "skewX", "skewY"], Ne = { x: "translateX", y: "translateY", z: "translateZ", transformPerspective: "perspective" }, $e = { translateX: "px", translateY: "px", translateZ: "px", x: "px", y: "px", z: "px", perspective: "px", transformPerspective: "px", rotate: "deg", rotateX: "deg", rotateY: "deg" }; function Ve(e, r) { let t = $e[e]; return !t || typeof r == "string" && r.endsWith(t) ? r : `${r}${t}` } function xe(e) { return ue.includes(e) } var je = (e, r) => ue.indexOf(e) - ue.indexOf(r); function Se({ transform: e, transformKeys: r }, t) { let o = {}, s = !0, i = ""; r.sort(je); for (let n of r) { let f = e[n], a = !0; typeof f == "number" ? a = f === (n.startsWith("scale") ? 1 : 0) : a = parseFloat(f) === 0, a || (s = !1, i += `${Ne[n] || n}(${e[n]}) `), t && (o[n] = e[n]) } return i = i.trim(), t ? i = t(o, i) : s && (i = "none"), i } function de(e, r) { let t = new Set(Object.keys(e)); for (let o in r) t.add(o); return Array.from(t) } function ge(e, r) { let t = r - e.length; if (t <= 0) return e; let o = new Array(t).fill(e[e.length - 1]); return e.concat(o) } function R(e) { return e * 1e3 } var Pe = { duration: .001 }, z = { opacity: 1, scale: 1, translateX: 0, translateY: 0, translateZ: 0, x: 0, y: 0, z: 0, rotate: 0, rotateX: 0, rotateY: 0 }; function Oe(e, r, t, o, s) { return t.delay && (t.delay = R(t.delay)), t.type === "spring" ? qe(e, r, t, o, s) : Ye(e, r, t, o, s) } function We(e, r, t) { let o = {}, s = 0, i = 0; for (let n of de(e, r)) { let f = e[n] ?? z[n], a = r[n] ?? z[n]; if (f === void 0 || a === void 0 || n !== "transformPerspective" && f === a && f === z[n]) continue; n === "transformPerspective" && (o[n] = [f, a]); let m = Qe(f, a, t), { duration: p, keyframes: c } = m; p === void 0 || c === void 0 || (p > s && (s = p, i = c.length), o[n] = c) } return { keyframeValuesByProps: o, longestDuration: s, longestLength: i } } function qe(e, r, t, o, s) { let i = {}, { keyframeValuesByProps: n, longestDuration: f, longestLength: a } = We(e, r, t); if (!a) return i; let m = { ease: "linear", duration: f, delay: t.delay }, p = s ? Pe : m, c = {}; for (let [x, A] of Object.entries(n)) xe(x) ? c[x] = ge(A, a) : i[x] = { keyframes: ge(A, a), options: x === "opacity" ? m : p }; let u = Ce(c, o); return u && (i.transform = { keyframes: u, options: p }), i } function Xe(e) { let { type: r, duration: t, ...o } = e; return { duration: R(t), ...o } } function Ye(e, r, t, o, s) { let i = Xe(t); if (!i) return; let n = {}, f = s ? Pe : i, a = {}; for (let p of de(e, r)) { let c = e[p] ?? z[p], u = r[p] ?? z[p]; c === void 0 || u === void 0 || p !== "transformPerspective" && c === u || (xe(p) ? a[p] = [c, u] : n[p] = { keyframes: [c, u], options: p === "opacity" ? i : f }) } let m = Ce(a, o); return m && (n.transform = { keyframes: m, options: f }), n } var He = ["duration", "bounce"], Ze = ["stiffness", "damping", "mass"]; function Ee(e) { return Ze.some(r => r in e) ? !1 : He.some(r => r in e) } function Ue(e, r, t) { return Ee(t) ? `${e}-${r}-${t.duration}-${t.bounce}` : `${e}-${r}-${t.damping}-${t.stiffness}-${t.mass}` } function _e(e) { return Ee(e) ? { ...e, duration: R(e.duration) } : e } var De = new Map, we = 10; function Qe(e, r, t) { let o = Ue(e, r, t), s = De.get(o); if (s) return s; let i = [e, r], n = E({ ..._e(t), keyframes: i }), f = { done: !1, value: i[0] }, a = [], m = 0; for (; !f.done && m < R(10);)f = n.next(m), a.push(f.value), m += we; i = a; let p = m - we, u = { keyframes: i, duration: p, ease: "linear" }; return De.set(o, u), u } function Ce(e, r) { let t = [], o = Object.values(e)[0]?.length; if (!o) return; let s = Object.keys(e); for (let i = 0; i < o; i++) { let n = {}; for (let [a, m] of Object.entries(e)) { let p = m[i]; p !== void 0 && (n[a] = Ve(a, p)) } let f = Se({ transform: n, transformKeys: s }, r); t.push(f) } return t } function Je(e, r) { if (!r) for (let t in e) { let o = e[t]; return o?.legacy === !0 ? o : void 0 } } function ke(e, r, t, o, s, i) { for (let [n, f] of Object.entries(e)) { let a = i ? f[i] : void 0; if (a === null || !a && f.default === null) continue; let m = a ?? f.default ?? Je(f, i); if (!m) continue; let { initial: p, animate: c, transformTemplate: u } = m; if (!p || !c) continue; let { transition: x, ...A } = c, d = Oe(p, A, x, er(u, o), s); if (!d) continue; let h = {}, y = {}; for (let [w, v] of Object.entries(d)) h[w] = v.keyframes, y[w] = v.options; let F = i ? `:not(.hidden-${i}) ` : ""; r(`${F}[${t}="${n}"]`, h, y) } } function er(e, r) { if (!(!e || !r)) return (t, o) => e.replace(r, o) } function Ie(e) { return e ? e.find(t => t.mediaQuery ? window.matchMedia(t.mediaQuery).matches === !0 : !1)?.hash : void 0 } var kt = { animateAppearEffects: ke, getActiveVariantHash: Ie, spring: E, startOptimizedAppearAnimation: le }; return kt })()</script>
+  <script type="framer/appear"
+    id="__framer__appearAnimationsContent">{"16birka":{"default":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"damping":60,"delay":0.2,"mass":1,"stiffness":200,"type":"spring"},"x":0,"y":0}}},"5hbeit":{"default":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"damping":60,"delay":0.5,"mass":1,"stiffness":200,"type":"spring"},"x":0,"y":0}}},"1df8tgi":{"default":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"damping":60,"delay":1.1,"mass":1,"stiffness":200,"type":"spring"},"x":0,"y":0}}},"1jq7msv":{"default":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"damping":60,"delay":1.2,"mass":1,"stiffness":200,"type":"spring"},"x":0,"y":0}}},"cjfzm3":{"default":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1.1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"bounce":0,"delay":0,"duration":3,"type":"spring"},"x":0,"y":0}},"1hn01op":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1.1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"bounce":0,"delay":0,"duration":3,"type":"spring"},"x":0,"y":0}},"1dp0tct":{"initial":{"opacity":0.001,"rotate":0,"rotateX":0,"rotateY":0,"scale":1.1,"skewX":0,"skewY":0,"x":0,"y":0},"animate":{"opacity":1,"rotate":0,"rotateX":0,"rotateY":0,"scale":1,"skewX":0,"skewY":0,"transition":{"bounce":0,"delay":0,"duration":3,"type":"spring"},"x":0,"y":0}}}}</script>
+  <script type="framer/appear"
+    id="__framer__breakpoints">[{"hash":"72rtr7","mediaQuery":"(min-width: 1200px)"},{"hash":"1hn01op","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"1dp0tct","mediaQuery":"(max-width: 809.98px)"},{"hash":"cgi17f","mediaQuery":"(min-width: 1200px)"},{"hash":"bt281z","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"j76z1o","mediaQuery":"(max-width: 809.98px)"}]</script>
+  <script
+    data-framer-appear-animation="no-preference">(() => { function c(i, o, s) { if (window.__framer_disable_appear_effects_optimization__ || typeof animator > "u") return; let e = { detail: { bg: document.hidden } }; requestAnimationFrame(() => { let a = "framer-appear-start"; performance.mark(a, e), animator.animateAppearEffects(JSON.parse(window.__framer__appearAnimationsContent.text), (m, p, d) => { let t = document.querySelector(m); if (t) for (let [r, f] of Object.entries(p)) animator.startOptimizedAppearAnimation(t, r, f, d[r]) }, i, o, s && window.matchMedia("(prefers-reduced-motion:reduce)").matches === !0, animator.getActiveVariantHash(JSON.parse(window.__framer__breakpoints.text))); let n = "framer-appear-end"; performance.mark(n, e), performance.measure("framer-appear", { start: a, end: n, detail: e.detail }) }) } return c })()("data-framer-appear-id", "__Appear_Animation_Transform__", false)</script>
+  <script>typeof document < "u" && (window.process = { ...window.process, env: { ...window.process?.env, NODE_ENV: "production" } });</script>
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/react.vbTmeS35.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/rolldown-runtime.Co4_kzzg.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/motion.bJWRYGYy.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/framer.CHjDUFAF.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/shared-lib.Dj6SN9RR.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/GNvaONxX6.Dpx9Mf3P.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/QhK6qqT5U.D581V4In.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/RMpAvj7R1.CjTp54Dx.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/Rays_Prod.B85_SGvv.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/VnmEZ_3BZ.CISBpqir.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/QuTNz53Yy.DdlHzBUH.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/qSFPqdhXvbfekhGmPoTYeugDK79cAtydBZZgx0Naiks.eHUAkB9c.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/tAU8hAZZK.CNQWYnM_.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/augiA20Il.D3c1e0Vx.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/J8wt8XB3I.DaBuWsta.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/BB5OYjlP6.D1U9BRXB.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/m5IbXkhd3.Cg490Sc9.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/Q9YGoPiQM.bayj9dMy.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/Smooth_Scroll.Db-UU72L.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/ABKs9wxVy.CmVc6RZE.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/boOGllWYo.DaHh_TmQ.mjs">
+  <link rel="modulepreload" fetchpriority="low"
+    href="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/ms2G8Wp92.CpIyT3xT.mjs">
+  <script type="module" async data-framer-bundle="main" fetchPriority="low"
+    src="https://framerusercontent.com/sites/7B3frTvavrVlcNtejMIOH5/script_main.CzRhRE7U.mjs"></script>
+  <div id="svg-templates"
+    style="position: absolute; overflow: hidden; bottom: 0; left: 0; width: 0; height: 0; z-index: 0; contain: strict"
+    aria-hidden="true">
+    <svg viewBox="0 0 28 28" id="svg10061864197">
+      <g transform="translate(7.778 6.222)">
+        <path
+          d="M 11.846 10.262 C 11.611 10.975 11.273 11.649 10.842 12.264 C 10.444 12.829 10.117 13.219 9.868 13.435 C 9.48 13.793 9.063 13.975 8.616 13.984 C 8.296 13.984 7.908 13.893 7.459 13.709 C 7.066 13.538 6.643 13.445 6.214 13.435 C 5.818 13.435 5.392 13.526 4.936 13.709 C 4.478 13.893 4.11 13.989 3.828 13.998 C 3.402 14.017 2.973 13.83 2.548 13.435 C 2.276 13.2 1.937 12.794 1.529 12.222 C 1.07 11.567 0.707 10.849 0.451 10.091 C 0.161 9.277 0.008 8.42 0 7.555 C 0 6.617 0.204 5.807 0.611 5.129 C 0.925 4.595 1.369 4.15 1.901 3.834 C 2.427 3.523 3.021 3.358 3.623 3.352 C 3.965 3.352 4.41 3.458 4.964 3.663 C 5.516 3.87 5.869 3.974 6.025 3.974 C 6.143 3.974 6.536 3.852 7.204 3.607 C 7.835 3.382 8.37 3.288 8.806 3.324 C 9.988 3.421 10.878 3.884 11.469 4.721 C 10.411 5.359 9.887 6.253 9.898 7.4 C 9.907 8.293 10.232 9.038 10.872 9.627 C 11.163 9.901 11.486 10.113 11.846 10.264 Z M 8.87 0 C 8.879 0.093 8.885 0.187 8.885 0.28 C 8.885 0.98 8.627 1.633 8.115 2.24 C 7.498 2.959 6.75 3.376 5.938 3.309 C 5.927 3.221 5.922 3.133 5.922 3.044 C 5.922 2.371 6.218 1.652 6.737 1.064 C 6.998 0.765 7.33 0.52 7.731 0.32 C 8.086 0.139 8.473 0.03 8.87 0 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      </g>
+    </svg>
+    <svg viewBox="0 0 28 28" id="svg11456083774">
+      <g transform="translate(6.222 9.101)">
+        <path
+          d="M 8.649 4.242 L 0.075 9.575 L 0 9.575 L 0 5.309 L 8.552 0 L 13.658 0 C 13.747 -0.004 13.834 0.029 13.899 0.091 C 13.964 0.153 14 0.239 14 0.329 L 14 9.575 L 8.649 9.575 L 8.654 7.983 C 8.654 7.738 8.75 7.408 9.022 7.245 L 13.233 4.72 C 13.314 4.678 13.361 4.592 13.354 4.502 C 13.355 4.397 13.292 4.302 13.194 4.263 C 13.163 4.249 13.129 4.242 13.095 4.242 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      </g>
+    </svg>
+    <svg viewBox="0 0 28 28" id="svg10788998062">
+      <g transform="translate(6.611 7)">
+        <path
+          d="M 12.424 9.697 C 12.021 9.189 11.712 8.826 11.712 7.848 L 11.712 4.604 C 11.712 3.236 11.618 1.955 10.61 1.017 C 9.803 0.274 8.474 0 7.426 0 C 5.209 0 3.229 0.902 2.744 3.324 C 2.703 3.6 2.906 3.716 3.066 3.757 L 5.167 3.948 C 5.37 3.948 5.491 3.754 5.531 3.559 C 5.693 2.736 6.421 2.047 7.227 2.047 C 7.67 2.047 8.546 2.494 8.546 3.432 L 8.546 4.604 C 7.255 4.604 5.813 4.692 4.684 5.16 C 3.354 5.709 2.216 6.759 2.216 8.442 C 2.216 10.592 3.872 11.766 5.645 11.766 C 7.138 11.766 7.95 11.377 9.117 10.243 C 9.482 10.791 9.708 11.181 10.392 11.766 C 10.556 11.846 10.756 11.846 10.875 11.729 C 11.279 11.374 11.982 10.635 12.424 10.284 C 12.626 10.125 12.586 9.892 12.424 9.697 Z M 8.546 6.65 C 8.546 7.431 8.394 9.382 6.418 9.382 C 5.402 9.382 5.382 8.185 5.382 8.185 C 5.382 6.648 7.014 6.137 8.546 6.137 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+        <path
+          d="M 13.482 13.148 C 11.841 14.157 9.386 14.778 7.396 14.778 C 4.756 14.791 2.182 13.944 0.065 12.365 C -0.092 12.234 0.065 12.104 0.221 12.169 C 2.448 13.235 4.887 13.781 7.356 13.765 C 9.151 13.765 11.414 13.44 13.247 12.788 C 13.518 12.723 13.752 12.984 13.48 13.148 Z M 14.067 12.463 C 13.872 12.234 12.701 12.365 12.194 12.396 C 12.037 12.396 11.999 12.3 12.155 12.202 C 13.051 11.646 14.572 11.81 14.729 12.006 C 14.885 12.202 14.689 13.473 13.832 14.059 C 13.714 14.159 13.558 14.092 13.636 13.997 C 13.832 13.603 14.261 12.69 14.065 12.462 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      </g>
+    </svg>
+    <svg viewBox="0 0 28 28" id="svg9442524926">
+      <g transform="translate(5.444 6.513)">
+        <path
+          d="M 8.556 4.279 C 6.784 4.279 5.347 5.715 5.346 7.487 L 5.346 11.765 C 5.385 13.509 6.81 14.903 8.555 14.903 C 10.3 14.903 11.725 13.509 11.763 11.765 L 11.763 7.487 C 11.764 6.636 11.426 5.82 10.824 5.218 C 10.223 4.616 9.407 4.278 8.556 4.278 Z M 6.284 8.487 L 10.827 8.487 L 10.827 10.758 L 6.284 10.758 Z M 8.556 14.036 C 7.303 14.029 6.29 13.015 6.284 11.763 L 6.284 11.693 L 10.827 11.693 L 10.827 11.763 C 10.822 13.016 9.808 14.03 8.556 14.036 Z M 10.827 7.549 L 6.284 7.549 L 6.284 7.487 C 6.284 6.233 7.301 5.216 8.556 5.216 C 9.81 5.216 10.827 6.233 10.827 7.487 L 10.827 7.551 Z M 16.396 9.203 L 12.833 5.885 L 12.833 10.75 C 12.833 11.932 13.791 12.889 14.972 12.889 C 16.153 12.889 17.111 11.932 17.111 10.75 C 17.109 10.156 16.847 9.591 16.396 9.204 Z M 14.972 11.951 C 14.308 11.95 13.771 11.413 13.77 10.749 L 13.77 8.022 L 15.758 9.878 C 15.999 10.081 16.142 10.379 16.148 10.694 C 16.163 11.018 16.046 11.334 15.825 11.57 C 15.603 11.807 15.296 11.944 14.972 11.951 Z M 0 10.749 C 0 11.93 0.958 12.888 2.139 12.888 C 3.32 12.888 4.278 11.93 4.278 10.749 L 4.278 5.883 L 0.716 9.203 C 0.267 9.592 0.006 10.155 0 10.749 Z M 1.327 9.915 L 3.341 8.022 L 3.341 10.749 C 3.309 11.389 2.78 11.892 2.139 11.892 C 1.498 11.892 0.969 11.389 0.936 10.749 C 0.938 10.427 1.08 10.123 1.325 9.915 Z M 8.02 1.871 C 8.02 0.838 7.183 0 6.149 0 C 5.116 0 4.278 0.838 4.278 1.871 C 4.278 2.905 5.116 3.743 6.149 3.743 C 7.183 3.743 8.02 2.905 8.02 1.871 Z M 5.214 1.871 C 5.214 1.492 5.443 1.151 5.793 1.006 C 6.143 0.861 6.546 0.942 6.813 1.21 C 7.081 1.478 7.161 1.881 7.015 2.231 C 6.87 2.581 6.528 2.808 6.149 2.808 C 5.635 2.802 5.22 2.387 5.214 1.873 Z M 10.962 0.002 C 9.928 0.002 9.091 0.839 9.091 1.873 C 9.091 2.906 9.928 3.744 10.962 3.744 C 11.996 3.744 12.834 2.906 12.834 1.872 C 12.834 0.838 11.996 0 10.962 0 Z M 10.962 2.808 C 10.446 2.808 10.027 2.389 10.027 1.873 C 10.027 1.357 10.446 0.938 10.962 0.938 C 11.478 0.938 11.897 1.357 11.897 1.873 C 11.891 2.387 11.476 2.802 10.962 2.808 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      </g>
+    </svg>
+    <svg viewBox="0 0 28 28" id="svg11057156593">
+      <g transform="translate(4.667 11.166)">
+        <path
+          d="M 2.231 7.221 C 1.629 7.196 1.136 7.031 0.75 6.725 C 0.64 6.629 0.537 6.526 0.442 6.415 C 0.296 6.236 0.184 6.033 0.111 5.815 C -0.11 5.158 0.002 4.301 0.429 3.357 C 0.797 2.55 1.36 1.75 2.343 0.642 C 2.487 0.478 2.921 0 2.923 0 L 2.87 0.092 C 2.615 0.522 2.416 0.983 2.279 1.464 C 2.085 2.167 2.108 2.77 2.344 3.237 C 2.508 3.559 2.786 3.841 3.102 3.993 C 3.651 4.264 4.455 4.287 5.438 4.06 C 5.507 4.044 8.861 3.152 12.891 2.077 L 20.222 0.123 L 5.995 6.225 C 5.555 6.421 5.109 6.602 4.656 6.765 C 3.732 7.092 2.901 7.247 2.229 7.221 Z"
+          fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      </g>
+    </svg>
+    <svg viewBox="0 0 29 29" id="svg11883250021">
+      <path
+        d="M 4.634 18.34 L 3.438 19.028 C 3.105 19.22 2.9 19.571 2.9 19.95 C 2.9 20.329 3.105 20.68 3.438 20.872 L 13.95 26.928 C 14.29 27.124 14.71 27.124 15.05 26.928 L 25.562 20.872 C 25.895 20.68 26.1 20.329 26.1 19.95 C 26.1 19.571 25.895 19.22 25.562 19.028 L 24.366 18.338 L 16.15 23.072 C 15.131 23.659 13.869 23.659 12.85 23.072 Z"
+        fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      <path
+        d="M 4.634 12.64 L 3.438 13.328 C 3.105 13.52 2.9 13.871 2.9 14.25 C 2.9 14.629 3.105 14.98 3.438 15.172 L 13.95 21.228 C 14.29 21.424 14.71 21.424 15.05 21.228 L 25.562 15.172 C 25.895 14.98 26.1 14.629 26.1 14.25 C 26.1 13.871 25.895 13.52 25.562 13.328 L 24.366 12.638 L 16.15 17.372 C 15.131 17.959 13.869 17.959 12.85 17.372 Z"
+        fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+      <path
+        d="M 15.051 1.572 C 14.711 1.375 14.289 1.375 13.949 1.572 L 3.436 7.628 C 3.104 7.82 2.899 8.171 2.899 8.55 C 2.899 8.929 3.104 9.28 3.436 9.472 L 13.949 15.528 C 14.289 15.725 14.711 15.725 15.051 15.528 L 25.563 9.472 C 25.896 9.28 26.101 8.929 26.101 8.55 C 26.101 8.171 25.896 7.82 25.563 7.628 Z"
+        fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+    </svg>
+    <svg viewBox="0 0 16 16" id="svg10570727501">
+      <path
+        d="M 5 8 L 5 4 C 5 2.343 6.343 1 8 1 C 9.657 1 11 2.343 11 4 L 11 8 C 11 9.657 9.657 11 8 11 C 6.343 11 5 9.657 5 8 Z M 13 8 C 13 7.724 12.776 7.5 12.5 7.5 C 12.224 7.5 12 7.724 12 8 C 12 10.209 10.209 12 8 12 C 5.791 12 4 10.209 4 8 C 4 7.724 3.776 7.5 3.5 7.5 C 3.224 7.5 3 7.724 3 8 C 3.003 10.567 4.947 12.715 7.5 12.975 L 7.5 15 C 7.5 15.276 7.724 15.5 8 15.5 C 8.276 15.5 8.5 15.276 8.5 15 L 8.5 12.975 C 11.053 12.715 12.997 10.567 13 8 Z"
+        fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+    </svg>
+    <svg viewBox="0 0 23 23" id="svg10239128106">
+      <path
+        d="M 21.323 11.5 C 21.304 10.825 21.098 10.167 20.727 9.601 C 20.357 9.037 19.836 8.585 19.224 8.299 C 19.457 7.664 19.506 6.977 19.37 6.316 C 19.233 5.653 18.913 5.042 18.448 4.552 C 17.957 4.087 17.347 3.768 16.684 3.63 C 16.023 3.494 15.336 3.543 14.701 3.776 C 14.416 3.162 13.965 2.641 13.4 2.271 C 12.834 1.901 12.176 1.694 11.5 1.677 C 10.825 1.695 10.169 1.9 9.605 2.271 C 9.04 2.642 8.592 3.164 8.308 3.776 C 7.673 3.543 6.984 3.492 6.32 3.63 C 5.656 3.766 5.044 4.086 4.553 4.552 C 4.088 5.043 3.77 5.655 3.635 6.317 C 3.499 6.978 3.551 7.665 3.786 8.299 C 3.172 8.585 2.649 9.036 2.277 9.6 C 1.905 10.165 1.697 10.824 1.677 11.5 C 1.698 12.176 1.905 12.834 2.277 13.4 C 2.649 13.964 3.172 14.416 3.786 14.701 C 3.551 15.335 3.499 16.022 3.635 16.683 C 3.771 17.346 4.088 17.957 4.552 18.448 C 5.043 18.911 5.654 19.229 6.316 19.366 C 6.977 19.504 7.664 19.454 8.299 19.224 C 8.585 19.836 9.036 20.357 9.601 20.728 C 10.166 21.098 10.825 21.304 11.5 21.323 C 12.176 21.306 12.834 21.1 13.4 20.73 C 13.965 20.36 14.416 19.837 14.701 19.225 C 15.333 19.475 16.025 19.534 16.691 19.396 C 17.356 19.258 17.966 18.929 18.447 18.448 C 18.928 17.967 19.258 17.357 19.396 16.691 C 19.534 16.025 19.475 15.333 19.224 14.701 C 19.836 14.415 20.357 13.964 20.728 13.399 C 21.098 12.834 21.304 12.175 21.323 11.5 Z M 10.101 15.525 L 6.516 11.941 L 7.868 10.58 L 10.034 12.746 L 14.634 7.734 L 16.042 9.037 Z"
+        fill="var(--token-f951c3a8-aa43-4825-aa75-915aa92c20d1, rgb(0, 85, 255))" />
+      <path d="M 8 10.5 L 6.5 12 L 10 15.5 L 16 9 L 14.5 7.5 L 10 12.5 Z"
+        fill="var(--token-59e77027-930e-45f7-94aa-a8ffadf9e382, rgb(255, 255, 255))" />
+    </svg>
+  </div>
+  <!-- Start of bodyEnd -->
+
+  <!-- End of bodyEnd -->
+  <style>
+    /* Remove white backgrounds from icon circles */
+    .framer-o8xzz1,
+    .framer-o1wgyl,
+    .framer-1g1q6r8,
+    .framer-1yajxxq,
+    .framer-ycjnx {
+      background: transparent !important;
+    }
+  </style>
+  <style>
+    /* Remove white circular borders from icon containers */
+    [data-border="true"] {
+      border: none !important;
+      --border-top-width: 0 !important;
+      --border-bottom-width: 0 !important;
+      --border-left-width: 0 !important;
+      --border-right-width: 0 !important;
+    }
+  </style>
+  <style>
+    /* Orbit logos: transparent chips with color-matched outlines */
+    [data-framer-name^="Arm"]>div[class*="-container"] {
+      background: transparent !important;
+      border: 2px solid var(--orbit-logo-outline, rgba(255, 255, 255, 0.45)) !important;
+      border-radius: 999px !important;
+      box-shadow: none !important;
+      overflow: hidden !important;
+    }
+
+    [data-framer-name^="Arm"]>div[class*="-container"].orbit-logo-empty {
+      display: none !important;
+    }
+
+    [data-framer-name^="Arm"]>div[class*="-container"]:nth-of-type(n+2) {
+      display: none !important;
+    }
+
+    [data-framer-name^="Arm"]>div[class*="-container"].orbit-logo-filled {
+      display: flex !important;
+    }
+
+    [data-framer-name^="Arm"]>div[class*="-container"],
+    [data-framer-name^="Arm"]>div[class*="-container"] * {
+      background-color: transparent !important;
+    }
+
+    [data-framer-name^="Arm"] img[alt="Logo"] {
+      background: transparent !important;
+      opacity: 1 !important;
+      filter: none !important;
+      transform: rotate(var(--orbit-logo-inverse, 0deg)) translateZ(0) !important;
+      transform-origin: 50% 50% !important;
+    }
+
+    [data-framer-name^="Arm"] img[data-orbit-filled-logo="true"] {
+      width: 64% !important;
+      height: 64% !important;
+      object-fit: contain !important;
+      margin: auto !important;
+      inset: 0 !important;
+    }
+  </style>
+  <style>
+    /* Hide disabled contact CTA links */
+    a[href="javascript:void(0)"] {
+      display: none !important;
+    }
+  </style>
+  <script>
+    (function populateCountryDropdown() {
+      const countries = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
+        "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia",
+        "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
+        "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
+        "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica",
+        "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
+        "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea",
+        "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
+        "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon",
+        "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives",
+        "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+        "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua",
+        "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama",
+        "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+        "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+        "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia",
+        "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
+        "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+        "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen",
+        "Zambia", "Zimbabwe"
+      ];
+
+      const isCountrySelect = (select) => {
+        const idOrName = `${select.id || ""} ${select.name || ""}`.toLowerCase();
+        const optionTexts = Array.from(select.options).map((o) => (o.textContent || "").trim().toLowerCase());
+        const hasCountryHint = idOrName.includes("country") || optionTexts.some((t) => t.includes("select your country"));
+        const hasOnlyCityPair = optionTexts.includes("amsterdam") && optionTexts.includes("barcelona");
+        return hasCountryHint || hasOnlyCityPair;
+      };
+
+      const fillCountries = (select) => {
+        if (!select || select.dataset.countryFixed === "true") return;
+        const selectedValue = select.value;
+        select.innerHTML = "";
+
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "Select your country";
+        select.appendChild(placeholder);
+
+        countries.forEach((country) => {
+          const option = document.createElement("option");
+          option.value = country;
+          option.textContent = country;
+          select.appendChild(option);
+        });
+
+        select.value = countries.includes(selectedValue) ? selectedValue : "";
+        select.dataset.countryFixed = "true";
+      };
+
+      const populateAll = () => {
+        const allSelects = Array.from(document.querySelectorAll("select"));
+        allSelects.filter(isCountrySelect).forEach(fillCountries);
+      };
+
+      populateAll();
+      setTimeout(populateAll, 300);
+      setTimeout(populateAll, 1000);
+      setTimeout(populateAll, 2000);
+
+      const observer = new MutationObserver(() => populateAll());
+      observer.observe(document.body, { childList: true, subtree: true });
+    })();
+  </script>
+  <script>
+    (function makeOrbitLogosOutlineOnly() {
+      const selector = '[data-framer-name^="Arm"] img[alt="Logo"]';
+      const processed = new WeakSet();
+
+      const colorDistance = (a, b) => {
+        const dr = a[0] - b[0];
+        const dg = a[1] - b[1];
+        const db = a[2] - b[2];
+        return Math.sqrt(dr * dr + dg * dg + db * db);
+      };
+
+      const saturation = (r, g, b) => {
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        return max === 0 ? 0 : (max - min) / max;
+      };
+
+      const rgb = (c, fallback = 'rgba(255,255,255,0.45)') => {
+        if (!c) return fallback;
+        return `rgb(${Math.round(c[0])}, ${Math.round(c[1])}, ${Math.round(c[2])})`;
+      };
+
+      const average = (colors) => {
+        if (!colors.length) return null;
+        const sum = colors.reduce((acc, color) => {
+          acc[0] += color[0];
+          acc[1] += color[1];
+          acc[2] += color[2];
+          return acc;
+        }, [0, 0, 0]);
+        return sum.map((value) => value / colors.length);
+      };
+
+      const processImage = (img) => {
+        if (processed.has(img) || img.dataset.orbitLogoProcessed === 'true') return;
+        processed.add(img);
+
+        const source = new Image();
+        source.crossOrigin = 'anonymous';
+        source.onload = () => {
+          try {
+            const width = source.naturalWidth || source.width;
+            const height = source.naturalHeight || source.height;
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d', { willReadFrequently: true });
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(source, 0, 0, width, height);
+
+            const image = ctx.getImageData(0, 0, width, height);
+            const data = image.data;
+            const cx = width / 2;
+            const cy = height / 2;
+            const outer = Math.min(width, height) / 2;
+            const bgSamples = [];
+            const colorSamples = [];
+
+            for (let y = 0; y < height; y += Math.max(1, Math.floor(height / 80))) {
+              for (let x = 0; x < width; x += Math.max(1, Math.floor(width / 80))) {
+                const index = (y * width + x) * 4;
+                if (data[index + 3] < 40) continue;
+                const dx = x - cx;
+                const dy = y - cy;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const color = [data[index], data[index + 1], data[index + 2]];
+
+                if (dist > outer * 0.58 && dist < outer * 0.98) {
+                  bgSamples.push(color);
+                } else if (saturation(color[0], color[1], color[2]) > 0.18) {
+                  colorSamples.push(color);
+                }
+              }
+            }
+
+            const bg = average(bgSamples);
+            const accent = average(colorSamples) || bg;
+            img.parentElement?.style.setProperty('--orbit-logo-outline', rgb(accent));
+
+            const totalPixels = data.length / 4;
+            let transparentPixels = 0;
+            let logoPixels = 0;
+
+            if (bg) {
+              for (let i = 0; i < data.length; i += 4) {
+                if (data[i + 3] < 20) {
+                  transparentPixels++;
+                  continue;
+                }
+                const color = [data[i], data[i + 1], data[i + 2]];
+                const sat = saturation(color[0], color[1], color[2]);
+                const brightness = (color[0] + color[1] + color[2]) / 3;
+                const closeToBg = colorDistance(color, bg) < 92;
+                const whiteDisk = brightness > 186 && sat < 0.2;
+                const greyDisk = sat < 0.12 && colorDistance(color, bg) < 112;
+
+                if (closeToBg || whiteDisk || greyDisk) {
+                  data[i + 3] = 0;
+                  transparentPixels++;
+                } else {
+                  logoPixels++;
+                  if (brightness < 55) {
+                    data[i] = 235;
+                    data[i + 1] = 240;
+                    data[i + 2] = 255;
+                  }
+                }
+              }
+            }
+
+            const logoRatio = logoPixels / totalPixels;
+
+            if (logoRatio < 0.01) {
+              img.parentElement?.classList.add('orbit-logo-empty');
+              img.dataset.orbitLogoProcessed = 'empty';
+              return;
+            }
+
+            ctx.putImageData(image, 0, 0);
+            img.src = canvas.toDataURL('image/png');
+            img.dataset.orbitLogoProcessed = 'true';
+          } catch (error) {
+            img.parentElement?.style.setProperty('--orbit-logo-outline', 'rgba(255,255,255,0.45)');
+          }
+        };
+        source.src = img.currentSrc || img.src;
+      };
+
+      const hideEmptyContainers = () => {
+        document.querySelectorAll('[data-framer-name^="Arm"] > div[class*="-container"]').forEach((container) => {
+          const img = container.querySelector('img[alt="Logo"]');
+          if (!img || img.dataset.orbitLogoProcessed === 'empty') {
+            container.classList.add('orbit-logo-empty');
+          }
+        });
+      };
+
+      const processAll = () => {
+        document.querySelectorAll(selector).forEach(processImage);
+        hideEmptyContainers();
+      };
+      processAll();
+      setTimeout(processAll, 500);
+      setTimeout(processAll, 1500);
+      new MutationObserver(processAll).observe(document.body, { childList: true, subtree: true });
+    })();
+  </script>
+  <script>
+    (function fillEmptyOrbitLogosAndSpeedUp() {
+      const logos = [
+        'assets/orbit-logos/Orange logo.png',
+        'assets/orbit-logos/blue-red.jpg',
+        'assets/orbit-logos/boat.png',
+        'assets/orbit-logos/chatgpt.png',
+        'assets/orbit-logos/claude.png',
+        'assets/orbit-logos/copilot.png',
+        'assets/orbit-logos/deepseek_0000.jpg',
+        'assets/orbit-logos/drive.png',
+        'assets/orbit-logos/huggingfacce.png',
+        'assets/orbit-logos/parrot-link.png'
+      ];
+
+      const fillAllSlots = () => {
+        const arms = Array.from(document.querySelectorAll('[data-framer-name^="Arm"]'));
+        let globalIndex = 0;
+
+        arms.forEach((arm) => {
+          if (globalIndex >= logos.length) {
+            arm.style.setProperty('display', 'none', 'important');
+            const containers = Array.from(arm.querySelectorAll('div[class*="-container"]'));
+            containers.forEach(c => c.style.setProperty('display', 'none', 'important'));
+            return;
+          }
+
+          const containers = Array.from(arm.querySelectorAll('div[class*="-container"]'));
+          let filledAny = false;
+
+          containers.forEach(container => {
+            const logoSrc = logos[globalIndex];
+
+            container.classList.remove('orbit-logo-empty');
+            container.classList.add('orbit-logo-filled');
+            container.style.removeProperty('display');
+
+            container.style.setProperty('--orbit-logo-outline', 'transparent', 'important');
+            container.style.setProperty('box-shadow', 'none', 'important');
+            container.style.setProperty('border', 'none', 'important');
+            container.style.setProperty('outline', 'none', 'important');
+            container.style.setProperty('overflow', 'hidden', 'important');
+            container.style.setProperty('border-radius', '50%', 'important');
+            container.style.setProperty('padding', '0', 'important');
+            container.style.setProperty('background', 'transparent', 'important');
+
+            let img = container.querySelector('img');
+            if (!img) {
+              img = document.createElement('img');
+              img.alt = 'Logo';
+              container.appendChild(img);
+            }
+
+            const currentSrc = img.getAttribute('src') || '';
+            if (!currentSrc.endsWith(logoSrc)) {
+              img.dataset.orbitFilledLogo = 'true';
+              img.dataset.orbitLogoProcessed = 'true';
+              img.src = logoSrc;
+            }
+
+            img.style.setProperty('width', '100%', 'important');
+            img.style.setProperty('height', '100%', 'important');
+            img.style.setProperty('object-fit', 'cover', 'important');
+            img.style.setProperty('border-radius', '50%', 'important');
+            img.style.setProperty('display', 'block', 'important');
+            img.style.setProperty('margin', '0', 'important');
+            img.style.setProperty('padding', '0', 'important');
+            img.style.setProperty('border', 'none', 'important');
+            img.style.setProperty('outline', 'none', 'important');
+
+            filledAny = true;
+          });
+
+          if (filledAny) {
+            globalIndex++;
+          }
+        });
+      };
+
+      const update = () => {
+        fillAllSlots();
+      };
+
+      update();
+      setTimeout(update, 500);
+      setTimeout(update, 1500);
+      setInterval(update, 2500);
+    })();
+  </script>
+  <script>
+    (function keepOrbitLogosUpright() {
+      const readRotation = (element) => {
+        const transform = element.style.transform || window.getComputedStyle(element).transform || '';
+        const inlineMatch = transform.match(/rotate\((-?\d+(?:\.\d+)?)deg\)/);
+        if (inlineMatch) return Number(inlineMatch[1]);
+        return 0;
+      };
+
+      const update = () => {
+        document.querySelectorAll('[data-framer-name^="Arm"]').forEach((arm) => {
+          const inverse = -readRotation(arm);
+          arm.querySelectorAll('img[alt="Logo"]').forEach((img) => {
+            img.style.setProperty('--orbit-logo-inverse', `${inverse}deg`);
+          });
+        });
+        requestAnimationFrame(update);
+      };
+
+      update();
+    })();
+  </script>
+  <style>
+    .home-end-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 24px;
+      background: transparent;
+      color: #fff;
+      font-family: Inter, sans-serif;
+      gap: 60px;
+    }
+
+    .home-end-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .home-end-eyebrow {
+      color: #a78bfa;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .home-end-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .home-end-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .home-end-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .home-end-faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 24px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .home-end-faq-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .home-end-cta {
+      background: linear-gradient(180deg, rgba(79, 26, 214, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+      border: 1px solid rgba(79, 26, 214, 0.3);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .home-end-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgb(79, 26, 214) 0%, rgb(227, 89, 89) 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: opacity 0.3s ease;
+    }
+
+    .home-end-button:hover {
+      opacity: 0.9;
+    }
+  </style>
 
   <script>
+    /* NFORCE ORCHESTRATOR v6.0 - THE ARCHITECTURAL FIX */
     (function () {
-      emailjs.init("QvqQU5BbHg18M_tsj");
+      const serviceKeywords = ['voicenexus', 'deviceinsight', 'installassist', 'services'];
+
+      const isServicePage = () => {
+        const url = (window.location.pathname + window.location.hash + window.location.search).toLowerCase();
+        const title = (document.title || '').toLowerCase();
+        for (const kw of serviceKeywords) {
+          if (url.includes(kw) || title.includes(kw)) return true;
+        }
+        return false;
+      };
+
+      const cleanServiceLayout = () => {
+        const footer = document.querySelector('footer');
+        if (!footer) return;
+
+        // 1. Remove Homepage Engagement Blocks
+        const engagementBlocks = document.querySelectorAll('section[data-framer-name="FAQ"], section[data-framer-name="CTA"], section[data-framer-name="Support"], .home-end-section');
+        engagementBlocks.forEach(block => block.remove());
+
+        // 2. Transform Footer to Minimal
+        // Hiding the columns we don't want on service pages
+        const pagesCol = footer.querySelector('[data-framer-name="Pages"]');
+        const socialCol = footer.querySelector('[data-framer-name="Social"]');
+        const bottomLinks = footer.querySelector('[data-framer-name="Right"]');
+        if (pagesCol) pagesCol.style.setProperty('display', 'none', 'important');
+        if (socialCol) socialCol.style.setProperty('display', 'none', 'important');
+        if (bottomLinks) bottomLinks.style.setProperty('display', 'none', 'important');
+
+        // Center the remaining content
+        const topSection = footer.querySelector('[data-framer-name="Top"]');
+        if (topSection) topSection.style.justifyContent = 'center';
+        const contentSection = footer.querySelector('[data-framer-name="Content"]');
+        if (contentSection) contentSection.style.justifyContent = 'center';
+      };
+
+      const restoreHomeLayout = () => {
+        const footer = document.querySelector('footer');
+        if (!footer) return;
+
+        const pagesCol = footer.querySelector('[data-framer-name="Pages"]');
+        const socialCol = footer.querySelector('[data-framer-name="Social"]');
+        const bottomLinks = footer.querySelector('[data-framer-name="Right"]');
+        if (pagesCol) pagesCol.style.removeProperty('display');
+        if (socialCol) socialCol.style.removeProperty('display');
+        if (bottomLinks) bottomLinks.style.removeProperty('display');
+      };
+
+      const fixAddress = () => {
+        const addrPlaceholder = "Software Unit Layout";
+        document.querySelectorAll('footer span, footer p').forEach(el => {
+          if (el.textContent.includes(addrPlaceholder)) {
+            el.innerHTML = "4th Floor, Sanali Spazio, Inorbit Mall Road,<br>Madhapur, Hyderabad, Telangana, 500081, India";
+            // Force visibility
+            let p = el.parentElement;
+            while (p && p.tagName !== 'FOOTER') {
+              p.style.opacity = "1";
+              p = p.parentElement;
+            }
+          }
+        });
+      };
+
+      const sync = () => {
+        const service = isServicePage();
+        if (service) {
+          cleanServiceLayout();
+        } else {
+          restoreHomeLayout();
+        }
+        fixAddress();
+
+        // Stabilize LinkedIn
+        document.querySelectorAll('a').forEach(a => {
+          if (a.href.includes('linkedin.com/company/nforce') && !a.href.includes('posts')) {
+            a.href = "https://www.linkedin.com/company/nforceone/posts/?feedView=all";
+            a.setAttribute('target', '_blank');
+          }
+        });
+      };
+
+      window.addEventListener('popstate', sync);
+      window.addEventListener('hashchange', sync);
+      new MutationObserver(sync).observe(document.body, { childList: true, subtree: true });
+      sync();
+      setTimeout(sync, 500);
+      setTimeout(sync, 1500);
+      console.log("NForce Orchestrator v6.0 Active");
     })();
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const btn = form.querySelector('.submit-btn');
-        const originalText = btn.textContent;
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        emailjs.sendForm('service_2jk5dlv', 'template_ri39fg6', form)
-          .then(() => {
-            btn.textContent = '✅ Message Sent';
-            btn.style.background = '#22c55e';
-            form.reset();
-            setTimeout(() => {
-              btn.textContent = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 4000);
-          })
-          .catch((error) => {
-            console.error('EmailJS Error:', error);
-            btn.textContent = '❌ Error';
-            btn.style.background = '#ef4444';
-            setTimeout(() => {
-              btn.textContent = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 4000);
-          });
-      });
-    });
   </script>
 </body>
 
